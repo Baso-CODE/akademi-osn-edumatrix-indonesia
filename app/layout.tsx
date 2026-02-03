@@ -70,7 +70,7 @@ export const metadata: Metadata = {
   description:
     "Les Privat Olimpiade OSN untuk SD–SMA. Dibimbing guru berpengalaman & peraih prestasi nasional. Belajar terarah, progres terpantau. Konsultasi gratis sekarang.",
   verification: {
-    google: "Cv9Bh_f2VODnu2TvfhGjaLfiwcD2r3pX9HbdbUanEBo",
+    google: "ncf5z6mALpNAHbm3jTHIruiz162Yq7rFS4DhNhuuo90",
   },
 
   openGraph: {
@@ -121,7 +121,7 @@ export default function RootLayout({
         <BottomNavigationBarOSN navLinksData={navLinks} />
         <FooterEduMatrix />
       </body>
-      <GoogleAnalytics gaId="G-70MQQHELFM" />
+      <GoogleAnalytics gaId="G-826HX59SVQ" />
     </html>
   );
 }
