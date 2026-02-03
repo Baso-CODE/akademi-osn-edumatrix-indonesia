@@ -83,7 +83,7 @@ export const metadata: Metadata = {
       "Les Privat Olimpiade OSN untuk SD–SMA. Dibimbing guru berpengalaman & peraih prestasi nasional. Belajar terarah, progres terpantau. Konsultasi gratis sekarang.",
     images: [
       {
-        url: "https://bimbeledumatrix.com/images/images-cta.webp",
+        url: "https://akademiosn.com/images/images-cta.webp",
         width: 1200,
         height: 630,
         alt: "Les Privat Alfa Privat",
@@ -98,7 +98,7 @@ export const metadata: Metadata = {
     title: "Les Privat Olimpiade • OSN IMO ISO Unggulan | Edumatrix",
     description:
       "Les Privat Olimpiade OSN untuk SD–SMA. Dibimbing guru berpengalaman & peraih prestasi nasional. Belajar terarah, progres terpantau. Konsultasi gratis sekarang.",
-    images: ["https://bimbeledumatrix.com/images/images-cta.webp"],
+    images: ["https://akademiosn.com/images/images-cta.webp"],
   },
 
   alternates: {

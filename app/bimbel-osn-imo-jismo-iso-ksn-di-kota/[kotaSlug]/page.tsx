@@ -44,7 +44,7 @@ export async function generateMetadata({
 
   const imageUrl = kotaData?.foto_kota
     ? `https://node-osn.edusmart-indonesia.com/kota-images/${kotaData.foto_kota}`
-    : "https://bimbeledumatrix.com/images/images-cta.webp";
+    : "https://akademiosn.com/images/images-cta.webp";
 
   const ogTitle = `📚 Les Privat Olimpiade ${formattedKotaName} • OSN IMO ISO Unggulan`;
   const ogDescription = `Kursus Les Privat Olimpiade ${formattedKotaName} Terbaik ✔️ Dibimbing GURU BERPENGALAMAN ✔️ Peraih Lisensi OSN ✔️ Garansi REPORT CARD ✍️ Daftar? Segera kunjungi situs kami...`;
@@ -117,7 +117,7 @@ export default async function KotaPage(props: {
   const link = contact.link_cta || "/contact";
 
   const fallbackImage =
-    "https://bimbeledumatrix.com/images/image-preview-landing-page.webp";
+    "https://akademiosn.com/images/image-preview-landing-page.webp";
 
   const imageUrl = kotaData?.foto_kota
     ? `https://node-osn.edusmart-indonesia.com/kota-images/${kotaData.foto_kota}`

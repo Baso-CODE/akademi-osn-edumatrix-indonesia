@@ -25,7 +25,7 @@ const YouTubeShortEmbed = () => {
       name: "Edumatrix Indonesia",
       logo: {
         "@type": "ImageObject",
-        url: "https://bimbeledumatrix.com/images/logo.webp",
+        url: "https://akademiosn.com/images/logo.webp",
       },
     },
   };

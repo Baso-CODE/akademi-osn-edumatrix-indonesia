@@ -24,8 +24,8 @@ import SliderMobile from "./components/slider/sliderMobile";
 import ImpactStatisticsOSN from "./components/statisticOSNEdumatrix/statisticOSNEDM";
 import TransformationOSN from "./components/TransformationOSN";
 import YouTubeShortEmbed from "./components/YouTubeShortEmbed";
-const ogImage = "https://bimbeledumatrix.com/images/images-cta.webp";
-const canonicalUrl = "https://bimbeledumatrix.com/";
+const ogImage = "https://akademiosn.com/images/images-cta.webp";
+const canonicalUrl = "https://akademiosn.com/";
 const pageTitle = "📚 Les Privat Olimpiade • OSN IMO ISO Unggulan | Edumatrix";
 const pageDescription =
   "Kursus Les Privat Olimpiade Terbaik ✔️ Dibimbing GURU BERPENGALAMAN ✔️ Peraih Lisensi OSN ✔️ Garansi REPORT CARD ✍️ Daftar? Segera kunjungi situs kami...";
