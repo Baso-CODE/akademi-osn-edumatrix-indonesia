@@ -22,7 +22,7 @@ export async function generateMetadata({
     await params;
   return generateLocationMetadata(
     kelurahanSlug,
-    `/bimbel-osn-imo-jismo-iso-ksn-di-kota/${kotaSlug}/${kabupatenSlug}/${kecamatanSlug}/${kelurahanSlug}`,
+    `/bimbel-lesprivat-osn-imo-jismo-iso-ksn-di-kota/${kotaSlug}/${kabupatenSlug}/${kecamatanSlug}/${kelurahanSlug}`,
   );
 }
 

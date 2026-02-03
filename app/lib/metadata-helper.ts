@@ -14,7 +14,7 @@ export function generateLocationMetadata(
 
   const finalCanonicalUrl = canonicalPath
     ? `${baseUrl}${canonicalPath}`
-    : `${baseUrl}/bimbel-osn-imo-jismo-iso-ksn-di-kota/${slug}`;
+    : `${baseUrl}/bimbel-lesprivat-osn-imo-jismo-iso-ksn-di-kota/${slug}`;
 
   const kotaData = getKotaDummyBySlug(slug);
 

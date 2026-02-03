@@ -50,7 +50,7 @@ export default async function LocationLandingPage({
   const { kotaSlug, kabupatenSlug, kecamatanSlug, kelurahanSlug } = allSlugs;
 
   // 1. Bangun Base URL Path secara dinamis
-  let urlPath = `/bimbel-osn-imo-jismo-iso-ksn-di-kota/${kotaSlug}`;
+  let urlPath = `/bimbel-lesprivat-osn-imo-jismo-iso-ksn-di-kota/${kotaSlug}`;
   if (kabupatenSlug) urlPath += `/${kabupatenSlug}`;
   if (kecamatanSlug) urlPath += `/${kecamatanSlug}`;
   if (kelurahanSlug) urlPath += `/${kelurahanSlug}`;

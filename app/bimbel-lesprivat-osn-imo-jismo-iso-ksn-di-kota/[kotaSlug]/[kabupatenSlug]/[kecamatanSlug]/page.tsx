@@ -19,7 +19,7 @@ export async function generateMetadata({
   const { kotaSlug, kabupatenSlug, kecamatanSlug } = await params;
   return generateLocationMetadata(
     kecamatanSlug,
-    `/bimbel-osn-imo-jismo-iso-ksn-di-kota/${kotaSlug}/${kabupatenSlug}/${kecamatanSlug}`,
+    `/bimbel-lesprivat-osn-imo-jismo-iso-ksn-di-kota/${kotaSlug}/${kabupatenSlug}/${kecamatanSlug}`,
   );
 }
 
