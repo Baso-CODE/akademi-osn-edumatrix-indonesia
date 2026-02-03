@@ -4,7 +4,7 @@ import { TiltCard } from "./tiltCard";
 
 const LearningMethod = async () => {
   return (
-    <section className="bg-white flex justify-center mt-12 items-center">
+    <section className="bg-white flex justify-center mt-12 items-center overflow-hidden">
       <div className="max-w-310 px-6">
         <div className="w-full">
           <div className="text-center">

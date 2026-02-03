@@ -26,11 +26,12 @@ import TransformationOSN from "./components/TransformationOSN";
 import YouTubeShortEmbed from "./components/YouTubeShortEmbed";
 const ogImage = "https://akademiosn.com/images/images-cta.webp";
 const canonicalUrl = "https://akademiosn.com/";
-const pageTitle = "📚 Les Privat Olimpiade • OSN IMO ISO Unggulan | Edumatrix";
+const pageTitle =
+  "📚 Les Privat Olimpiade • OSN IMO ISO Unggulan | Akademi OSN";
 const pageDescription =
   "Kursus Les Privat Olimpiade Terbaik ✔️ Dibimbing GURU BERPENGALAMAN ✔️ Peraih Lisensi OSN ✔️ Garansi REPORT CARD ✍️ Daftar? Segera kunjungi situs kami...";
 const pageKeywords =
-  "bimbel OSN, les privat OSN, Olimpiade Sains Nasional, IMO, JISMO, KSN, bimbingan belajar OSN SD, OSN SMP, OSN SMA, persiapan olimpiade, guru olimpiade, materi olimpiade, Edumatrix Indonesia";
+  "bimbel OSN, les privat OSN, Olimpiade Sains Nasional, IMO, JISMO, KSN, bimbingan belajar OSN SD, OSN SMP, OSN SMA, persiapan olimpiade, guru olimpiade, materi olimpiade, Akademi OSN";
 
 export const metadata: Metadata = {
   title: pageTitle,

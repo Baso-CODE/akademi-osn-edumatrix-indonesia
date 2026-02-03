@@ -21,7 +21,7 @@ export default async function ListKota() {
         <div className="relative w-full max-w-310 mx-auto mb-16 overflow-hidden rounded-2xl">
           <Image
             src="/images/nusantara-preview-kota-indonesia.webp"
-            alt="Peta Jangkauan Edumatrix Indonesia"
+            alt="Peta Jangkauan Akademi OSN"
             width={2000}
             height={1200}
             className="w-full h-auto object-cover"

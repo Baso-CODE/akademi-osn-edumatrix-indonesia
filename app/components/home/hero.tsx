@@ -32,17 +32,17 @@ export default async function Hero() {
             <p
               className=" mb-8 font-desc text-[14px] md:text-[16px] leading-4.75 font-bold"
               data-aos="fade-right">
-              Edumatrix Indonesia bangga mendukung generasi muda Indonesia dalam
-              meraih prestasi di Olimpiade Sains Nasional. Program kami
-              dirancang untuk mempersiapkan siswa dengan pengetahuan mendalam
-              dan keterampilan analitis yang tajam, memastikan mereka siap
-              menghadapi tantangan kompetisi sains terbesar di tanah air.
+              Akademi OSN bangga mendukung generasi muda Indonesia dalam meraih
+              prestasi di Olimpiade Sains Nasional. Program kami dirancang untuk
+              mempersiapkan siswa dengan pengetahuan mendalam dan keterampilan
+              analitis yang tajam, memastikan mereka siap menghadapi tantangan
+              kompetisi sains terbesar di tanah air.
               <br />
               Melalui bimbingan intensif dan metode belajar yang inovatif, kami
               membantu setiap peserta mencapai potensi maksimalnya, mengukir
               prestasi gemilang, dan membawa nama harum bagi sekolah dan bangsa.
-              Bersama Edumatrix Indonesia, jadilah bagian dari perjalanan menuju
-              puncak prestasi di OSN!
+              Bersama Akademi OSN, jadilah bagian dari perjalanan menuju puncak
+              prestasi di OSN!
             </p>
 
             <Link

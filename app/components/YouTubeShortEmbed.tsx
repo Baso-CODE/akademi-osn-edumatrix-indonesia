@@ -1,9 +1,9 @@
 const YouTubeShortEmbed = () => {
   const videoId = "Pi0jI_mvQRw";
   // Judul dan deskripsi disamakan dengan konten agar relevan
-  const videoTitle = "Strategi Jitu Lolos OSN | Edumatrix Indonesia";
+  const videoTitle = "Strategi Jitu Lolos OSN | Akademi OSN";
   const videoDescription =
-    "Edumatrix Indonesia hadir dengan bimbingan les privat terbaik untuk Olimpiade Sains Nasional (OSN). Kami membimbing Anda dengan strategi jitu dan pengajar ahli untuk meraih medali emas impian Anda!";
+    "Akademi OSN hadir dengan bimbingan les privat terbaik untuk Olimpiade Sains Nasional (OSN). Kami membimbing Anda dengan strategi jitu dan pengajar ahli untuk meraih medali emas impian Anda!";
   const videoUploadDate = "2025-07-23T08:00:00+07:00";
 
   const embedUrl = `https://www.youtube.com/embed/${videoId}?autoplay=0&controls=1&modestbranding=1&rel=0&showinfo=0`;
@@ -22,7 +22,7 @@ const YouTubeShortEmbed = () => {
     contentUrl: watchUrl,
     publisher: {
       "@type": "Organization",
-      name: "Edumatrix Indonesia",
+      name: "Akademi OSN",
       logo: {
         "@type": "ImageObject",
         url: "https://akademiosn.com/images/logo.webp",
@@ -72,7 +72,7 @@ const YouTubeShortEmbed = () => {
             {/* Gunakan H1 jika ini adalah judul utama halaman, jika bagian dari section lain gunakan H2 */}
             <h2 className="text-3xl font-extrabold text-[#ffffff] sm:text-4x font-titlel">
               Raih Prestasi Gemilang di OSN <br className="hidden sm:inline" />{" "}
-              Bersama Edumatrix!
+              Bersama Akademi OSN!
             </h2>
             <p className="mt-4 text-lg  text-gray-200 font-desc">
               {videoDescription}

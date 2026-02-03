@@ -20,7 +20,7 @@ export default async function FooterEduMatrix() {
         {/* Title */}
         <div className="flex justify-between items-center mb-8">
           <h2 className="sm:text-[36px] text-[30px] font-title font-bold">
-            Edumatrix Indonesia
+            Akademi OSN
           </h2>
         </div>
 
@@ -58,9 +58,9 @@ export default async function FooterEduMatrix() {
             <h3 className="text-lg font-title font-bold mb-2">About Us:</h3>
 
             <p className="font-desc">
-              Edumatrix Indonesia hadir sebagai mitra terpercaya dalam
-              meningkatkan potensi akademik siswa melalui bimbingan belajar dan
-              les privat berkualitas untuk berbagai jenjang pendidikan.
+              Akademi OSN hadir sebagai mitra terpercaya dalam meningkatkan
+              potensi akademik siswa melalui bimbingan belajar dan les privat
+              berkualitas untuk berbagai jenjang pendidikan.
             </p>
 
             <h3 className="text-lg font-bold font-title mb-0 mt-6">
@@ -95,7 +95,7 @@ export default async function FooterEduMatrix() {
 
         {/* Footer Text */}
         <p className="mt-8 text-center text-xs font-title">
-          &copy; {currentYear} - Edumatrix - ONLINE & OFFLINE
+          &copy; {currentYear} - Akademi OSN - ONLINE & OFFLINE
         </p>
 
         <p className="text-center text-xs font-title">

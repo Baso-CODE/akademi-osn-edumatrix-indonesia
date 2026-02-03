@@ -35,16 +35,16 @@ const Features = () => {
 
           <div className="mt-8 mb-6" data-aos="fade-up">
             <h2 className="text-lg md:text-2xl text-[#374151]  font-semibold font-title">
-              Kelebihan Cara Belajar di Edumatrix
+              Kelebihan Cara Belajar di Akademi OSN
             </h2>
             <p className="text-sm md:text-base text-[#374151]  mt-2 font-desc">
-              Di Edumatrix Indonesia, kami tahu setiap orang punya cara belajar
-              yang berbeda. Karena itu, kami menghadirkan kelas online dan
-              offline dengan pendekatan yang fleksibel, interaktif, dan bisa
-              disesuaikan dengan kebutuhan kamu. Mau belajar lewat sesi langsung
-              bareng pengajar atau akses materi kapan aja lewat platform digital
-              — semuanya bisa. Tujuannya satu: biar kamu bisa belajar lebih
-              cepat, paham lebih dalam, dan hasilnya benar-benar terasa.
+              Di Akademi OSN, kami tahu setiap orang punya cara belajar yang
+              berbeda. Karena itu, kami menghadirkan kelas online dan offline
+              dengan pendekatan yang fleksibel, interaktif, dan bisa disesuaikan
+              dengan kebutuhan kamu. Mau belajar lewat sesi langsung bareng
+              pengajar atau akses materi kapan aja lewat platform digital —
+              semuanya bisa. Tujuannya satu: biar kamu bisa belajar lebih cepat,
+              paham lebih dalam, dan hasilnya benar-benar terasa.
             </p>
           </div>
 

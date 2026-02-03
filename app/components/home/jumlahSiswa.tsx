@@ -56,7 +56,7 @@ const JumlahSiswa = () => {
                     {siswaEdumatrix[currentIndex]}
                   </motion.p>
                   <h3 className="mt-[-15px] font-bold text-[20px] font-desc">
-                    Siswa Edumatrix
+                    Siswa Akademi OSN
                   </h3>
                 </div>
               </div>
@@ -102,13 +102,13 @@ const JumlahSiswa = () => {
               data-aos="fade-down-left">
               <div className="flex flex-col">
                 <h2 className="text-4xl font-bold mb-4 font-title text-[#133B79] leading-10">
-                  Edumatrix Siap Membantumu Menjadi Sang Juara
+                  Akademi OSN Siap Membantumu Menjadi Sang Juara
                 </h2>
                 <p className="mb-4 text-[#374151] font-desc text-[15px] md:text-[16px] leading-5 font-medium opacity-90">
-                  Di Edumatrix Indonesia, kami berkomitmen untuk membantu kamu
-                  meraih puncak kesuksesan. Dengan program pelatihan yang
-                  dirancang khusus, kami menyediakan alat dan dukungan yang kamu
-                  butuhkan untuk menjadi juara di berbagai bidang.
+                  Di Akademi OSN, kami berkomitmen untuk membantu kamu meraih
+                  puncak kesuksesan. Dengan program pelatihan yang dirancang
+                  khusus, kami menyediakan alat dan dukungan yang kamu butuhkan
+                  untuk menjadi juara di berbagai bidang.
                 </p>
                 <p className="mb-8 text-[#374151] font-desc text-[15px] md:text-[16px] leading-5 font-medium opacity-90">
                   Dari bimbingan intensif hingga strategi belajar yang efektif,
@@ -116,7 +116,7 @@ const JumlahSiswa = () => {
                   menuju kemenangan. Kami percaya pada potensi setiap individu
                   dan bertekad untuk memfasilitasi perjalananmu menuju prestasi
                   tertinggi. Bergabunglah dengan kami dan wujudkan impianmu
-                  menjadi sang juara dengan Edumatrix Indonesia!
+                  menjadi sang juara dengan Akademi OSN!
                 </p>
               </div>
             </div>

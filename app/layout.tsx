@@ -66,7 +66,7 @@ const superPencil = localFont({
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
-  title: "Les Privat Olimpiade • OSN IMO ISO Unggulan | Edumatrix",
+  title: "Les Privat Olimpiade • OSN IMO ISO Unggulan | Akademi OSN",
   description:
     "Les Privat Olimpiade OSN untuk SD–SMA. Dibimbing guru berpengalaman & peraih prestasi nasional. Belajar terarah, progres terpantau. Konsultasi gratis sekarang.",
   verification: {
@@ -76,9 +76,9 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "id_ID",
-    url: "https://bimbeledumatrix.com",
+    url: "https://akademiosn.com",
     siteName: "Bimbel Alfa Privat",
-    title: "Les Privat Olimpiade • OSN IMO ISO Unggulan | Edumatrix",
+    title: "Les Privat Olimpiade • OSN IMO ISO Unggulan | Akademi OSN",
     description:
       "Les Privat Olimpiade OSN untuk SD–SMA. Dibimbing guru berpengalaman & peraih prestasi nasional. Belajar terarah, progres terpantau. Konsultasi gratis sekarang.",
     images: [
@@ -95,14 +95,14 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     site: "@alfaprivat",
-    title: "Les Privat Olimpiade • OSN IMO ISO Unggulan | Edumatrix",
+    title: "Les Privat Olimpiade • OSN IMO ISO Unggulan | Akademi OSN",
     description:
       "Les Privat Olimpiade OSN untuk SD–SMA. Dibimbing guru berpengalaman & peraih prestasi nasional. Belajar terarah, progres terpantau. Konsultasi gratis sekarang.",
     images: ["https://akademiosn.com/images/images-cta.webp"],
   },
 
   alternates: {
-    canonical: "https://bimbeledumatrix.com",
+    canonical: "https://akademiosn.com",
   },
 };
 
@@ -114,7 +114,7 @@ export default function RootLayout({
   return (
     <html lang="id">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${poppins.variable} ${roboto.variable} ${oswald.variable} ${honk.variable} ${superPencil.variable} antialiased`}>
+        className={`${geistSans.variable} ${geistMono.variable} ${poppins.variable} ${roboto.variable} ${oswald.variable} ${honk.variable} ${superPencil.variable} antialiased `}>
         <ResponsiveNav />
         {children}
         <FloatingCTA />

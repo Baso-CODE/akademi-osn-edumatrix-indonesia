@@ -27,7 +27,7 @@ export default function HeroKelurahan({
             <p
               className="mb-4 font-desc text-[1rem] leading-4.75 font-medium "
               data-aos="fade-right">
-              Edumatrix Indonesia merupakan{" "}
+              Akademi OSN merupakan{" "}
               <strong>bimbel OSN (Olimpiade Sains Nasional)</strong> dan{" "}
               <strong>les privat KSN–IMO</strong> terpercaya di{" "}
               <span className="text-[#faae17] font-extrabold uppercase">
@@ -80,7 +80,7 @@ export default function HeroKelurahan({
             data-aos="fade-left">
             <Image
               src="/images/hero-image-kelurahan.webp"
-              alt={`Les privat dan bimbingan belajar OSN terbaik di Kelurahan ${kelurahanName}. Edumatrix Indonesia membantu siswa SD, SMP, dan SMA di ${kelurahanName} mempersiapkan diri menghadapi Olimpiade Sains Nasional (OSN) melalui pembelajaran intensif, guru profesional, dan metode belajar yang interaktif.`}
+              alt={`Les privat dan bimbingan belajar OSN terbaik di Kelurahan ${kelurahanName}. Akademi OSN membantu siswa SD, SMP, dan SMA di ${kelurahanName} mempersiapkan diri menghadapi Olimpiade Sains Nasional (OSN) melalui pembelajaran intensif, guru profesional, dan metode belajar yang interaktif.`}
               className="w-full h-full"
               width={1000}
               height={1000}

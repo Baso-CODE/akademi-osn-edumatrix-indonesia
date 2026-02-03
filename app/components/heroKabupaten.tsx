@@ -28,7 +28,7 @@ export default function HeroKabupaten({
             <p
               className="mb-6 font-desc text-[1rem] leading-4.75 font-medium"
               data-aos="fade-right">
-              Edumatrix Indonesia adalah{" "}
+              Akademi OSN adalah{" "}
               <strong>bimbel OSN (Olimpiade Sains Nasional)</strong> terbaik di{" "}
               <span className="text-[#faae17] font-extrabold uppercase">
                 {KabupatenName}
@@ -39,7 +39,7 @@ export default function HeroKabupaten({
               <strong>lolos seleksi Olimpiade Sains Nasional</strong> dan meraih
               medali emas di tingkat provinsi maupun nasional. Dengan bimbingan
               intensif dari <strong>pengajar berpengalaman</strong> dan modul
-              yang sesuai kurikulum OSN terbaru, Edumatrix memastikan setiap
+              yang sesuai kurikulum OSN terbaru, Akademi OSN memastikan setiap
               siswa di{" "}
               <span className="text-[#faae17] font-extrabold uppercase">
                 {KabupatenName}
@@ -81,7 +81,7 @@ export default function HeroKabupaten({
               width={1000}
               height={1000}
               src="/images/hero-image-kabupaten-page.webp"
-              alt={`Les privat dan bimbingan belajar OSN terbaik di ${KabupatenName}. Edumatrix Indonesia membantu siswa SD, SMP, dan SMA meraih prestasi Olimpiade Sains Nasional (OSN) dengan pengajar profesional dan metode belajar interaktif di ${KabupatenName}.`}
+              alt={`Les privat dan bimbingan belajar OSN terbaik di ${KabupatenName}. Akademi OSN membantu siswa SD, SMP, dan SMA meraih prestasi Olimpiade Sains Nasional (OSN) dengan pengajar profesional dan metode belajar interaktif di ${KabupatenName}.`}
               className="w-full h-full"
               loading="lazy"
             />

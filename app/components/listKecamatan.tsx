@@ -30,7 +30,7 @@ export default async function ListKecamatan({
             alt="gambar"
             className=" w-full h-full mb-8 rounded-md"
           />
-          <button className="absolute w-[363px] h-[65px] bg-[#133B79] font-title bottom-1 text-white font-bold py-2 px-4 shadow-2xl flex items-center justify-center text-[1.4rem] md:text-[2rem] rounded-xl">
+          <button className="absolute w-90.75 h-16.25 bg-[#133B79] font-title bottom-1 text-white font-bold py-2 px-4 shadow-2xl flex items-center justify-center text-[1.4rem] md:text-[2rem] rounded-xl">
             Lihat Lebih Lanjut
           </button>
         </div>

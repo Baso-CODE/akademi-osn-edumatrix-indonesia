@@ -12,8 +12,8 @@ const GoldenTicketShowcase = () => {
         </h2>
 
         <p className="text-xl text-gray-700 mb-12 max-w-3xl mx-auto font-desc leading-normal px-4">
-          Di Edumatrix Indonesia, kami membimbing siswa-siswa untuk meraih
-          prestasi gemilang di Olimpiade Sains Nasional (OSN). Kemenangan di OSN
+          Di Akademi OSN, kami membimbing siswa-siswa untuk meraih prestasi
+          gemilang di Olimpiade Sains Nasional (OSN). Kemenangan di OSN
           seringkali membuka pintu emas ke sekolah-sekolah favorit.
         </p>
 
@@ -39,9 +39,9 @@ const GoldenTicketShowcase = () => {
             <p className="text-gray-800 text-lg leading-relaxed mb-6 font-desc">
               Setiap tahun, banyak siswa berprestasi di Olimpiade Sains Nasional
               (OSN) mendapatkan jalur khusus atau &quot;Golden Ticket&quot;
-              untuk masuk ke sekolah-sekolah unggulan favorit mereka. Edumatrix
-              Indonesia hadir untuk mempersiapkan Anda menjadi salah satu dari
-              mereka.
+              untuk masuk ke sekolah-sekolah unggulan favorit mereka. Akademi
+              OSN Indonesia hadir untuk mempersiapkan Anda menjadi salah satu
+              dari mereka.
             </p>
 
             <ul className="text-gray-700 text-base space-y-3 list-disc list-inside">

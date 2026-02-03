@@ -28,7 +28,7 @@ export default async function Contact() {
         {/* TEXT + CTA */}
         <div className="lg:w-1/2 w-full mt-9 lg:mt-0 text-center lg:text-left order-last lg:order-0">
           <h2 className="lg:text-[40px] text-[28px] sm:text-[35px] font-bold font-title mb-4 leading-tight">
-            Kini Saatnya Menjadi Juara Bersama Edumatrix
+            Kini Saatnya Menjadi Juara Bersama Akademi OSN
           </h2>
 
           <p className="text-[16px] my-6 font-desc font-bold max-w-lg mx-auto lg:mx-0">

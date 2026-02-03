@@ -21,7 +21,7 @@ export const cardsLearningMethod: LearningMethodCard[] = [
     img: "/images/learning-methode/promise.webp",
     title: "Structured Program",
     description:
-      "Kami akan membuat sistem belajar yang personal, sistematis, terstruktur, holistik dan dipetakan berdasarkan target Anda. Target Program Edumatrix Indonesia adalah kesuksesan Anda dalam meraih impian masa depan yang diinginkan.",
+      "Kami akan membuat sistem belajar yang personal, sistematis, terstruktur, holistik dan dipetakan berdasarkan target Anda. Target Program Akademi OSN adalah kesuksesan Anda dalam meraih impian masa depan yang diinginkan.",
   },
   {
     img: "/images/learning-methode/values.webp",

@@ -29,7 +29,7 @@ export default function HeroKota({
             <p
               className="mb-4 font-desc text-[1rem] lleading-4.75 font-medium"
               data-aos="fade-right">
-              Edumatrix hadir di{" "}
+              Akademi OSN hadir di{" "}
               <span className="text-[#faae17] font-extrabold uppercase">
                 {kotaName}
               </span>{" "}
@@ -40,7 +40,7 @@ export default function HeroKota({
               <strong>SD, SMP, dan SMA</strong> agar lebih percaya diri,
               berpikir kritis, dan siap menghadapi tantangan OSN di bidang{" "}
               matematika, fisika, kimia, biologi, komputer, dan ekonomi . Dengan
-              pengajar profesional dan metode belajar interaktif, Edumatrix
+              pengajar profesional dan metode belajar interaktif, Akademi OSN
               memastikan siswa di{" "}
               <span className="text-[#faae17] font-extrabold uppercase">
                 {kotaName}

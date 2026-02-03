@@ -16,8 +16,7 @@ export default async function SuccessStorySlider() {
 
         <p className="text-lg sm:text-xl text-white text-center mb-8 sm:mb-12 max-w-3xl mx-auto opacity-90 leading-normal font-desc">
           Mereka adalah bukti nyata keberhasilan program bimbingan kami.
-          Bergabunglah dengan Edumatrix Indonesia dan jadilah kisah sukses
-          berikutnya!
+          Bergabunglah dengan Akademi OSN dan jadilah kisah sukses berikutnya!
         </p>
 
         <div className="overflow-hidden whitespace-nowrap py-4">
@@ -26,8 +25,7 @@ export default async function SuccessStorySlider() {
             speed={50}
             pauseOnHover
             gradient
-            gradientColor="4,57,125"
-          >
+            gradientColor="4,57,125">
             {successStories.map((story) => (
               <div key={story.id} className="inline-block mx-4">
                 <Image

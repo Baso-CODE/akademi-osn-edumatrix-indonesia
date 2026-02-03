@@ -2,10 +2,10 @@ import Image from "next/image";
 
 const HeroAbout = () => {
   return (
-    <section className="relative bg-[#04397D] flex items-center justify-center">
+    <section className="relative bg-[#04397D] flex items-center justify-center overflow-hidden">
       <div className="py-24 px-2 mt-16 text-white max-w-310 min-h-screen  lg:min-h-[60vh]">
         <div className="flex flex-col lg:flex-row gap-0">
-          <div className="lg:w-[35%] mt-[50px] flex flex-col justify-center">
+          <div className="lg:w-[35%] mt-12.5 flex flex-col justify-center">
             <h1
               className="text-[64px] font-bold leading-10 font-title mb-6 text-[#faae17]"
               data-aos="fade-down">
@@ -15,10 +15,10 @@ const HeroAbout = () => {
             <p
               className="mb-2 font-desc text-[16px] leading-5 font-bold opacity-90"
               data-aos="fade-right">
-              EDUMATRIX Indonesia adalah lembaga bimbingan belajar untuk
-              Persiapan Masuk Kedokteran, PTN, dan Kedinasan. Kami menawarkan
-              berbagai program unggulan yang dirancang untuk mempersiapkan siswa
-              menghadapi ujian dan seleksi dengan percaya diri.
+              Akademi OSN adalah lembaga bimbingan belajar untuk Persiapan Masuk
+              Kedokteran, PTN, dan Kedinasan. Kami menawarkan berbagai program
+              unggulan yang dirancang untuk mempersiapkan siswa menghadapi ujian
+              dan seleksi dengan percaya diri.
             </p>
             <br />
             <p
@@ -45,11 +45,11 @@ const HeroAbout = () => {
               height={1000}
               loading="lazy"
             />
-            <div className="absolute -bottom-px left-0 right-0 h-[100px] bg-linear-to-t from-[#04397D] to-transparent"></div>
+            <div className="absolute -bottom-px left-0 right-0 h-25 bg-linear-to-t from-[#04397D] to-transparent"></div>
           </div>
         </div>
       </div>
-      <div className="absolute -bottom-px xl:bottom-[-30px] left-0 w-full">
+      <div className="absolute -bottom-px xl:bottom-7.5left-0 w-full">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
           <path
             fill="#ffffff"

@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import { getKotaBySlug } from "../request/kota/getKotaBySlugRequest";
-import { GetKotaBySlugResponse } from "../types/kota.types";
+import { getKabupatenDummyByKotaSlug } from "../lib/getDummyDataRequest/getKabupatenDummy.request";
+import { Kabupaten } from "../types/kota.types";
 
 interface Props {
   kotaName: string;
@@ -9,17 +9,15 @@ interface Props {
 }
 
 export default async function ListKabupaten({ kotaName, kotaSlug }: Props) {
-  let kabupatens: GetKotaBySlugResponse["data"]["kabupatens"] = [];
+  let kabupatens: Kabupaten[] = [];
 
-  // Fetch aman tanpa risiko error SSR
   try {
-    const res = await getKotaBySlug(kotaSlug);
-    kabupatens = res?.data?.kabupatens ?? [];
+    // Ambil data dari fungsi dummy lokal
+    kabupatens = await getKabupatenDummyByKotaSlug(kotaSlug);
   } catch (err) {
-    console.error("Error fetch kabupaten:", err);
-    kabupatens = []; // Fallback
+    console.error("Error fetch kabupaten dummy:", err);
+    kabupatens = [];
   }
-
   return (
     <div className="bg-[#04397D] flex items-center justify-center">
       <div className="container mx-auto flex flex-col items-center max-w-310 my-6">
@@ -30,11 +28,11 @@ export default async function ListKabupaten({ kotaName, kotaSlug }: Props) {
             height={1000}
             loading="eager"
             src="/images/cabang-edumatrix-indonesia.webp"
-            alt="Cakupan layanan Edumatrix di berbagai kota dan kabupaten Indonesia."
+            alt="Cakupan layanan Akademi OSN di berbagai kota dan kabupaten Indonesia."
             className="w-full h-full mb-8 rounded-md"
           />
 
-          <button className="absolute w-[363px] h-[65px] bg-[#133B79] font-title bottom-1 text-white font-bold py-2 px-4 shadow-2xl flex items-center justify-center text-[1.4rem] md:text-[2rem] rounded-xl">
+          <button className="absolute w-90.75 h-16.25 bg-[#133B79] font-title bottom-1 text-white font-bold py-2 px-4 shadow-2xl flex items-center justify-center text-[1.4rem] md:text-[2rem] rounded-xl">
             Lihat Lebih Lanjut
           </button>
         </div>

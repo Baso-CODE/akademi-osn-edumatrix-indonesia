@@ -8,7 +8,7 @@ export const programBelajarDummy: ProgramBelajar[] = [
     foto_icon: "/images/program-belajar/program-osn-terlengkap.webp",
     nama_admin: "Kak Sari",
     description:
-      "Program Terlengkap dari Edumatrix adalah solusi unggul untuk kebutuhan bimbingan dan pendidikan Anda. Kami menawarkan berbagai program yang dirancang untuk memenuhi kebutuhan belajar yang paling komprehensif.",
+      "Program Terlengkap dari Akademi OSN adalah solusi unggul untuk kebutuhan bimbingan dan pendidikan Anda. Kami menawarkan berbagai program yang dirancang untuk memenuhi kebutuhan belajar yang paling komprehensif.",
     isDeleted: false,
     created_at: "2024-08-09T03:30:18.000Z",
     updated_at: "2024-08-09T03:39:22.000Z",
@@ -21,7 +21,7 @@ export const programBelajarDummy: ProgramBelajar[] = [
 
     nama_admin: "Kak Iva",
     description:
-      "Memastikan bahwa setiap siswa di Edumatrix diajar oleh tenaga pengajar yang berkompeten dan profesional. Kami hanya memilih pengajar terbaik yang memiliki pengalaman dan keahlian dalam bidang mereka masing-masing.",
+      "Memastikan bahwa setiap siswa di Akademi OSN diajar oleh tenaga pengajar yang berkompeten dan profesional. Kami hanya memilih pengajar terbaik yang memiliki pengalaman dan keahlian dalam bidang mereka masing-masing.",
     isDeleted: false,
     created_at: "2024-08-09T03:51:34.000Z",
     updated_at: "2024-08-21T03:09:24.000Z",
@@ -47,7 +47,7 @@ export const programBelajarDummy: ProgramBelajar[] = [
 
     nama_admin: "Kak Iva",
     description:
-      "Kurikulum Personal di Edumatrix memungkinkan setiap siswa memiliki jalur pembelajaran yang disesuaikan dengan kebutuhan dan tujuan pribadi mereka. Kurikulum ini dirancang berdasarkan analisis mendalam terhadap kemampuan, minat, dan gaya belajar setiap siswa. ",
+      "Kurikulum Personal di Akademi OSN memungkinkan setiap siswa memiliki jalur pembelajaran yang disesuaikan dengan kebutuhan dan tujuan pribadi mereka. Kurikulum ini dirancang berdasarkan analisis mendalam terhadap kemampuan, minat, dan gaya belajar setiap siswa. ",
     isDeleted: false,
     created_at: "2024-08-09T03:54:08.000Z",
     updated_at: "2024-08-09T03:54:08.000Z",
@@ -73,7 +73,7 @@ export const programBelajarDummy: ProgramBelajar[] = [
 
     nama_admin: "Kak Iva",
     description:
-      "Quality Control adalah fitur penting di Edumatrix yang memastikan bahwa seluruh proses pembelajaran berjalan sesuai dengan standar kualitas yang tinggi. Melalui evaluasi rutin dan penilaian yang ketat, untuk selalu berada pada level terbaik.",
+      "Quality Control adalah fitur penting di Akademi OSN yang memastikan bahwa seluruh proses pembelajaran berjalan sesuai dengan standar kualitas yang tinggi. Melalui evaluasi rutin dan penilaian yang ketat, untuk selalu berada pada level terbaik.",
     isDeleted: false,
     created_at: "2024-08-09T03:56:37.000Z",
     updated_at: "2024-08-09T03:57:45.000Z",
