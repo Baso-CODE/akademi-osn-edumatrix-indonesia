@@ -21,7 +21,7 @@ const LearningMethod = async () => {
                 didesain secara sistematis, terstruktur, terukur dan teruji.
                 Pembelajaran Tematik berdasar Statistik Soal yang diujikan.
                 Fokus menerapkan Pola Sukses yang sudah proven. Pastikan pilih
-                partner terbaik untuk kesuksesan dan masa depanmu, EDUMATRIX
+                partner terbaik untuk kesuksesan dan masa depanmu, AKADEMI OSN
                 Indonesia!
               </p>
             </div>

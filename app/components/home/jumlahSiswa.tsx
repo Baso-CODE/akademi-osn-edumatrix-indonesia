@@ -29,18 +29,18 @@ const JumlahSiswa = () => {
   return (
     <section className="items-center justify-center flex">
       <div className="max-w-310">
-        <div className="bg-white lg:h-[555px] h-auto w-full py-12 px-2 lg:px-2">
-          <div className="flex flex-col lg:flex-row gap-[30px] -mt-10 relative">
+        <div className="bg-white lg:h-138.75 h-auto w-full py-12 px-2 lg:px-2">
+          <div className="flex flex-col lg:flex-row gap-7.5 -mt-10 relative">
             {/* Left Side - Image */}
             <div
-              className="lg:w-1/2 flex justify-center items-center mt-[-50px] lg:mt-[-90px] relative"
+              className="lg:w-1/2 flex justify-center items-center -mt-12.5 lg:-mt-22.5 relative"
               data-aos="fade-up-right">
               <Image
                 width={1000}
                 height={1000}
                 loading="eager"
                 src="/images/presentase-siswa-master-teacher-edumatrix.webp"
-                alt="presentase siswa edumatrix"
+                alt="presentase siswa Akademi OSN"
                 className=" z-10"
               />
 
@@ -55,7 +55,7 @@ const JumlahSiswa = () => {
                     className="font-normal text-[50px] font-pencil">
                     {siswaEdumatrix[currentIndex]}
                   </motion.p>
-                  <h3 className="mt-[-15px] font-bold text-[20px] font-desc">
+                  <h3 className="-mt-3.75 font-bold text-[20px] font-desc">
                     Siswa Akademi OSN
                   </h3>
                 </div>
@@ -72,14 +72,14 @@ const JumlahSiswa = () => {
                     className="font-normal text-[50px] font-pencil">
                     {masterTeacherNumbers[currentIndex]}
                   </motion.p>
-                  <h3 className="mt-[-15px] font-bold text-[20px] font-desc">
+                  <h3 className="-mt-3.75 font-bold text-[20px] font-desc">
                     Master Teacher
                   </h3>
                 </div>
               </div>
 
               {/* BOTTOM */}
-              <div className="absolute top-[280px] left-0 w-full flex justify-center z-10">
+              <div className="absolute top-70 left-0 w-full flex justify-center z-10">
                 <div className="flex flex-col items-center text-white">
                   <motion.p
                     key={`percent-${currentIndex}`}
@@ -89,7 +89,7 @@ const JumlahSiswa = () => {
                     className="font-normal text-[50px] font-pencil">
                     {masterTeacherPercent[currentIndex]}
                   </motion.p>
-                  <h3 className="mt-[-15px] font-bold text-[20px] font-desc">
+                  <h3 className="-mt-3.75 font-bold text-[20px] font-desc">
                     Presentase Kelulusan
                   </h3>
                 </div>

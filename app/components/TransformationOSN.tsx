@@ -53,7 +53,7 @@ export default function TransformationOSN() {
             <div className="w-full  mb-6 ">
               <Image
                 src="/images/solusi/after.webp"
-                alt="Siswa percaya diri juara OSN EduMatrix"
+                alt="Siswa percaya diri juara OSN Akademi OSN"
                 width={500}
                 height={400}
                 className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105"
@@ -73,7 +73,7 @@ export default function TransformationOSN() {
         {/* OPTIONAL BOTTOM TEXT */}
         <div className="mt-16 text-center border-t border-gray-100 dark:border-slate-800 pt-8">
           <p className="text-sm text-gray-500 dark:text-slate-500 italic">
-            *Ilustrasi perjalanan siswa bimbingan Olimpiade Sains by EduMatrix
+            *Ilustrasi perjalanan siswa bimbingan Olimpiade Sains by Akademi OSN
             Indonesia
           </p>
         </div>
