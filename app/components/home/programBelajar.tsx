@@ -9,13 +9,13 @@ import {
 } from "react-icons/ai";
 import { TbMessageCircleQuestion } from "react-icons/tb";
 
-const icons = [
-  <AiOutlineBulb className="bg-transparent text-blue-900" />,
-  <AiOutlineCheckCircle className="bg-transparent text-orange-500" />,
-  <AiOutlineStar className="bg-transparent text-blue-900" />,
-  <AiOutlineUser className="bg-transparent text-orange-500" />,
-  <AiOutlineCheckSquare className="bg-transparent text-blue-900" />,
-  <TbMessageCircleQuestion className="bg-transparent text-orange-500" />,
+const iconComponents = [
+  { Icon: AiOutlineBulb, color: "text-blue-900" },
+  { Icon: AiOutlineCheckCircle, color: "text-orange-500" },
+  { Icon: AiOutlineStar, color: "text-blue-900" },
+  { Icon: AiOutlineUser, color: "text-orange-500" },
+  { Icon: AiOutlineCheckSquare, color: "text-blue-900" },
+  { Icon: TbMessageCircleQuestion, color: "text-orange-500" },
 ];
 
 const animations = [
@@ -60,7 +60,11 @@ export default async function Program() {
                 {/* Header Icon + Title */}
                 <div className="flex items-center mb-2">
                   <div className="bg-white p-1 rounded-full flex items-center justify-center">
-                    {icons[index % icons.length]}
+                    {(() => {
+                      const { Icon, color } =
+                        iconComponents[index % iconComponents.length];
+                      return <Icon className={`bg-transparent ${color}`} />;
+                    })()}
                   </div>
                   <h3 className="ml-2 font-medium md:text-lg text-2xl font-title">
                     {item.judul_fitur}

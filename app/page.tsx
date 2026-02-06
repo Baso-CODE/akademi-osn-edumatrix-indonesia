@@ -10,6 +10,8 @@ import JumlahSiswa from "./components/home/jumlahSiswa";
 import ListKota from "./components/home/lisKota";
 import ListSiswa from "./components/home/listSiswa";
 import MengapaHarusEdumatrix from "./components/home/mengapaHarusEdumatrix";
+import OsnFlowComponent from "./components/home/osnFlowComponent";
+import OSNSampleQuestion from "./components/home/osnSampleQuestion";
 import PaketBelajarOSN from "./components/home/paketBelajarOSN";
 import Pengajar from "./components/home/pengajar";
 import Pilihan from "./components/home/pilihan";
@@ -75,6 +77,7 @@ export default function Home() {
       <JumlahSiswa />
       <ListSiswa />
       <Program />
+      <OsnFlowComponent />
       <YouTubeShortEmbed />
       <PaketBelajarOSN />
       <SliderMobile />
@@ -83,6 +86,7 @@ export default function Home() {
       <Pilihan />
       <MengapaHarusEdumatrix />
       <Pengajar />
+      <OSNSampleQuestion />
       <Gallery />
       <SuccessStorySlider />
       <TransformationOSN />

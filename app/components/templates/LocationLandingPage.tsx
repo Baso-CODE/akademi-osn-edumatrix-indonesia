@@ -14,6 +14,8 @@ import Gallery from "../home/gallery";
 import JumlahSiswa from "../home/jumlahSiswa";
 import ListSiswa from "../home/listSiswa";
 import MengapaHarusEdumatrix from "../home/mengapaHarusEdumatrix";
+import OsnFlowComponent from "../home/osnFlowComponent";
+import OSNSampleQuestion from "../home/osnSampleQuestion";
 import PaketBelajarOSN from "../home/paketBelajarOSN";
 import Pengajar from "../home/pengajar";
 import Pilihan from "../home/pilihan";
@@ -177,6 +179,7 @@ export default async function LocationLandingPage({
       <JumlahSiswa />
       <ListSiswa />
       <Program />
+      <OsnFlowComponent />
       <Features />
       <YouTubeShortEmbed />
       <PaketBelajarOSN />
@@ -186,6 +189,7 @@ export default async function LocationLandingPage({
       <Pilihan />
       <MengapaHarusEdumatrix />
       <Pengajar />
+      <OSNSampleQuestion />
       <Gallery />
       <TransformationOSN />
       <GoldenTicketShowcase />
