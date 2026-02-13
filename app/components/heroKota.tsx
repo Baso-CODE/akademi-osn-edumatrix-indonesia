@@ -1,5 +1,4 @@
-"use client";
-
+import * as motion from "motion/react-client";
 import Image from "next/image";
 
 interface HeroKotaProps {
@@ -13,22 +12,34 @@ export default function HeroKota({
   fotoKota,
   linkCta,
 }: HeroKotaProps) {
+  const bounceTransition = {
+    type: "spring" as const,
+    stiffness: 160,
+    damping: 12,
+  };
+
   return (
-    <section className="relative bg-[#04397D] flex items-center justify-center">
-      <div className="py-16 px-2 mt-16 text-white max-w-310 lg:min-h-[70vh] xl:min-h-[73vh]">
+    <section className="relative bg-[#04397D] flex items-center justify-center overflow-hidden">
+      <div className="py-16 px-2 mt-16 text-white max-w-310 lg:min-h-[70vh] xl:min-h-[73vh] relative z-10">
         <div className="flex flex-col lg:flex-row gap-14">
           {/* ===== TEXT SECTION ===== */}
           <div className="lg:w-1/2">
-            <h1
+            <motion.h1
               className="text-[38px] uppercase font-bold leading-10 font-title mb-8"
-              data-aos="fade-down">
+              initial={{ opacity: 0, y: -50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={bounceTransition}>
               BIMBEL & LES PRIVAT OSN KSN IMO SD SMP SMA Di{" "}
               <span className="text-[#faae17]">{kotaName}</span> TERBAIK #1
-            </h1>
+            </motion.h1>
 
-            <p
-              className="mb-4 font-desc text-[1rem] lleading-4.75 font-medium"
-              data-aos="fade-right">
+            <motion.p
+              className="mb-4 font-desc text-[1rem] leading-4.75 font-medium"
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ ...bounceTransition, delay: 0.2 }}>
               Akademi OSN hadir di{" "}
               <span className="text-[#faae17] font-extrabold uppercase">
                 {kotaName}
@@ -48,12 +59,14 @@ export default function HeroKota({
               mendapatkan <strong>pendampingan intensif</strong> agar dapat
               meraih prestasi terbaik dan menjadi juara OSN maupun olimpiade
               sains tingkat dunia.
-            </p>
+            </motion.p>
 
-            {/* CTA */}
-            <a
+            <motion.a
               href={linkCta}
-              data-aos="fade-up"
+              initial={{ opacity: 0, y: 50, scale: 0.9 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ ...bounceTransition, delay: 0.4 }}
               className="group relative inline-flex w-full md:w-[50%] lg:w-[40%] 
                 h-14 items-center justify-center rounded-full bg-[#F68507] 
                 py-1 pl-6 pr-14 font-medium text-neutral-50">
@@ -81,33 +94,42 @@ export default function HeroKota({
                   </svg>
                 </div>
               </div>
-            </a>
+            </motion.a>
           </div>
 
           {/* ===== IMAGE ===== */}
-          <div
+          {/* Masuk dari kanan + Scale membesar (Menggantikan fade-left) */}
+          <motion.div
             className="lg:w-1/2 flex justify-center items-center"
-            data-aos="fade-left">
+            initial={{ opacity: 0, x: 80, scale: 0.8 }}
+            whileInView={{ opacity: 1, x: 0, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ ...bounceTransition, delay: 0.3 }}>
             <Image
               src={fotoKota}
               alt={`Les privat OSN di ${kotaName}`}
               width={700}
               height={450}
-              className="w-full h-auto rounded-md"
+              className="w-full h-auto rounded-md shadow-2xl"
               loading="lazy"
             />
-          </div>
+          </motion.div>
         </div>
       </div>
 
-      {/* Wave */}
-      <div className="absolute -bottom-px xl:-bottom-22.5 left-0 w-full">
+      {/* Wave: Slide Up perlahan */}
+      <motion.div
+        className="absolute -bottom-px xl:-bottom-22.5 left-0 w-full pointer-events-none"
+        initial={{ y: 100, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ type: "spring", stiffness: 60, damping: 20, delay: 0.5 }}>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
           <path
             fill="#ffffff"
             d="M0,192L48,202.7C96,213,192,235,288,224C384,213,480,171,576,176C672,181,768,235,864,229.3C960,224,1056,160,1152,138.7C1248,117,1344,139,1392,149.3L1440,160V320H0Z"></path>
         </svg>
-      </div>
+      </motion.div>
     </section>
   );
 }

@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import * as motion from "motion/react-client";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
@@ -26,32 +26,39 @@ const JumlahSiswa = () => {
     }
   }, [currentIndex, siswaEdumatrix.length]);
 
+  const bounceTransition = {
+    type: "spring" as const,
+    stiffness: 160,
+    damping: 12,
+  };
+
   return (
-    <section className="items-center justify-center flex">
+    <section className="items-center justify-center flex ">
       <div className="max-w-310">
         <div className="bg-white lg:h-138.75 h-auto w-full py-12 px-2 lg:px-2">
           <div className="flex flex-col lg:flex-row gap-7.5 -mt-10 relative">
-            {/* Left Side - Image */}
-            <div
+            <motion.div
               className="lg:w-1/2 flex justify-center items-center -mt-12.5 lg:-mt-22.5 relative"
-              data-aos="fade-up-right">
+              initial={{ opacity: 0, x: -80, y: 50 }}
+              whileInView={{ opacity: 1, x: 0, y: 0 }}
+              viewport={{ once: true }}
+              transition={bounceTransition}>
               <Image
                 width={1000}
                 height={1000}
                 loading="eager"
                 src="/images/presentase-siswa-master-teacher-edumatrix.webp"
                 alt="presentase siswa Akademi OSN"
-                className=" z-10"
+                className="z-10"
               />
 
-              {/* TOP */}
               <div className="absolute top-10 left-0 w-full flex justify-center z-10">
                 <div className="flex flex-col items-center text-white">
                   <motion.p
                     key={`siswa-${currentIndex}`}
-                    initial={{ y: -50, opacity: 0 }}
+                    initial={{ y: -30, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
-                    transition={{ duration: 0.5 }}
+                    transition={{ type: "spring", stiffness: 200, damping: 15 }}
                     className="font-normal text-[50px] font-pencil">
                     {siswaEdumatrix[currentIndex]}
                   </motion.p>
@@ -61,14 +68,13 @@ const JumlahSiswa = () => {
                 </div>
               </div>
 
-              {/* CENTER */}
               <div className="absolute top-40 left-0 w-full flex justify-center z-10">
                 <div className="flex flex-col items-center text-white">
                   <motion.p
                     key={`number-${currentIndex}`}
-                    initial={{ y: -50, opacity: 0 }}
+                    initial={{ y: -30, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
-                    transition={{ duration: 0.5 }}
+                    transition={{ type: "spring", stiffness: 200, damping: 15 }}
                     className="font-normal text-[50px] font-pencil">
                     {masterTeacherNumbers[currentIndex]}
                   </motion.p>
@@ -78,14 +84,13 @@ const JumlahSiswa = () => {
                 </div>
               </div>
 
-              {/* BOTTOM */}
               <div className="absolute top-70 left-0 w-full flex justify-center z-10">
                 <div className="flex flex-col items-center text-white">
                   <motion.p
                     key={`percent-${currentIndex}`}
-                    initial={{ y: -50, opacity: 0 }}
+                    initial={{ y: -30, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
-                    transition={{ duration: 0.5 }}
+                    transition={{ type: "spring", stiffness: 200, damping: 15 }}
                     className="font-normal text-[50px] font-pencil">
                     {masterTeacherPercent[currentIndex]}
                   </motion.p>
@@ -94,12 +99,14 @@ const JumlahSiswa = () => {
                   </h3>
                 </div>
               </div>
-            </div>
+            </motion.div>
 
-            {/* Right Side - Text */}
-            <div
+            <motion.div
               className="lg:w-1/2 flex items-center justify-center"
-              data-aos="fade-down-left">
+              initial={{ opacity: 0, x: 80, y: -50 }}
+              whileInView={{ opacity: 1, x: 0, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ ...bounceTransition, delay: 0.2 }}>
               <div className="flex flex-col">
                 <h2 className="text-4xl font-bold mb-4 font-title text-[#133B79] leading-10">
                   Akademi OSN Siap Membantumu Menjadi Sang Juara
@@ -119,7 +126,7 @@ const JumlahSiswa = () => {
                   menjadi sang juara dengan Akademi OSN!
                 </p>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>

@@ -1,4 +1,5 @@
 import { getDataProgramDummy } from "@/app/lib/getDummyDataRequest/getProgramDummy.request";
+import * as motion from "motion/react-client";
 import Image from "next/image";
 import {
   AiOutlineBulb,
@@ -18,46 +19,55 @@ const iconComponents = [
   { Icon: TbMessageCircleQuestion, color: "text-orange-500" },
 ];
 
-const animations = [
-  "fade-down-right",
-  "fade-down",
-  "fade-down-left",
-  "fade-up-right",
-  "fade-up",
-  "fade-up-left",
-];
-
 const colors = ["bg-[#04397D]", "bg-orange-500"];
 
 export default async function Program() {
-  // let programData: ProgramBelajar[] = [];
-
-  // const programResult = await getAllProgramBelajarIsDeleted();
-  // programData = programResult.data;
-
-  // // Jika fetch gagal atau kosong → pakai placeholder
-  // const finalPrograms =
-  //   programData.length > 0 ? programData : placeholderPrograms;
-
   const programData = await getDataProgramDummy();
 
+  const bounceTransition = {
+    type: "spring" as const,
+    stiffness: 160,
+    damping: 12,
+    mass: 1,
+  };
+  const getInitialState = (index: number) => {
+    const modIndex = index % 6;
+
+    const y = modIndex < 3 ? -50 : 50;
+
+    const col = modIndex % 3;
+    const x = col === 0 ? -50 : col === 1 ? 0 : 50;
+
+    return { opacity: 0, x, y, scale: 0.9 };
+  };
+
   return (
-    <section className="bg-white flex justify-center my-28 items-center">
+    <section className="bg-white flex justify-center my-28 items-center overflow-hidden">
       <div className="max-w-310 px-2 md:px-0 w-full">
         <div className="container mx-auto">
-          <div className="flex justify-center items-center mb-16">
+          <motion.div
+            className="flex justify-center items-center mb-16"
+            initial={{ opacity: 0, y: -40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={bounceTransition}>
             <h2 className="text-[40px] font-bold font-title text-center text-blue-900">
               Fitur Program
             </h2>
-          </div>
+          </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-3">
             {programData.map((item, index) => (
-              <div
+              <motion.div
                 key={item.id}
                 className={`${colors[index % 2]} rounded-3xl p-8 text-white`}
-                data-aos={animations[index % animations.length]}>
-                {/* Header Icon + Title */}
+                initial={getInitialState(index)}
+                whileInView={{ opacity: 1, x: 0, y: 0, scale: 1 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{
+                  ...bounceTransition,
+                  delay: (index % 3) * 0.15,
+                }}>
                 <div className="flex items-center mb-2">
                   <div className="bg-white p-1 rounded-full flex items-center justify-center">
                     {(() => {
@@ -71,7 +81,6 @@ export default async function Program() {
                   </h3>
                 </div>
 
-                {/* Content Image + Description */}
                 <div className="flex justify-center">
                   <div className="flex flex-col md:flex-row gap-3">
                     <Image
@@ -87,11 +96,10 @@ export default async function Program() {
                     </p>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
 
-          {/* Optional message if using placeholder */}
           {programData.length === 0 && (
             <p className="text-center text-gray-600 mt-8 font-desc">
               Data asli tidak tersedia. Menampilkan konten placeholder.
