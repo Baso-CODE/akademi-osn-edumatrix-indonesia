@@ -20,7 +20,7 @@ export default function HeroKecamatan({
 
   return (
     <section className="relative bg-[#04397D] flex items-center justify-center overflow-hidden">
-      <div className="py-24 px-2 mt-8 text-white max-w-310 lg:min-h-[70vh] xl:min-h-[73vh] relative z-10">
+      <div className="py-24 px-2 mt-10 text-white max-w-310 lg:min-h-[70vh] xl:min-h-[74vh] relative z-10">
         <div className="flex flex-col lg:flex-row gap-14">
           {/* --- KOLOM KIRI (TEKS & TOMBOL) --- */}
           <div className="lg:w-1/2 flex flex-col justify-center">
