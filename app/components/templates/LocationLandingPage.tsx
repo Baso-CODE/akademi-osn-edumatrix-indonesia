@@ -59,7 +59,7 @@ export default async function LocationLandingPage({
 
   // Canonical URL yang akurat (termasuk slug saat ini)
   const baseUrl = "https://akademiosn.com";
-  const canonicalUrl = `${baseUrl}${urlPath}${type !== "kota" ? `/${slug}` : ""}`;
+  const canonicalUrl = `${baseUrl}${urlPath}`;
 
   // 1. Fetch Contact (Async - butuh await)
   const contactData = await getSingleContactCsIsDeleted().catch(() => null);
@@ -76,7 +76,80 @@ export default async function LocationLandingPage({
   const imageUrl = kotaData?.foto_kota
     ? `https://akademiosn.com${kotaData.foto_kota}`
     : fallbackImage;
+  const basePath = `${baseUrl}/bimbel-lesprivat-osn-imo-jismo-iso-ksn-di-kota`;
 
+  type BreadcrumbItem = {
+    "@type": "ListItem";
+    position: number;
+    item: {
+      "@id": string;
+      name: string;
+    };
+  };
+
+  const breadcrumbItems: BreadcrumbItem[] = [
+    {
+      "@type": "ListItem",
+      position: 1,
+      item: { "@id": baseUrl, name: "Home" },
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      item: {
+        "@id": basePath,
+        name: "Bimbel & Les Privat Olimpiade",
+      },
+    },
+  ];
+
+  let position = 3;
+
+  // Kota
+  if (kotaSlug) {
+    breadcrumbItems.push({
+      "@type": "ListItem",
+      position: position++,
+      item: {
+        "@id": `${basePath}/${kotaSlug}`,
+        name: formatSlugToTitle(kotaSlug),
+      },
+    });
+  }
+
+  // Kabupaten
+  if (kabupatenSlug) {
+    breadcrumbItems.push({
+      "@type": "ListItem",
+      position: position++,
+      item: {
+        "@id": `${basePath}/${kotaSlug}/${kabupatenSlug}`,
+        name: formatSlugToTitle(kabupatenSlug),
+      },
+    });
+  }
+
+  // Kecamatan
+  if (kecamatanSlug) {
+    breadcrumbItems.push({
+      "@type": "ListItem",
+      position: position++,
+      item: {
+        "@id": `${basePath}/${kotaSlug}/${kabupatenSlug}/${kecamatanSlug}`,
+        name: formatSlugToTitle(kecamatanSlug),
+      },
+    });
+  }
+
+  // Halaman aktif (terakhir)
+  breadcrumbItems.push({
+    "@type": "ListItem",
+    position: position,
+    item: {
+      "@id": canonicalUrl,
+      name: `Les Privat Olimpiade di ${formattedName}`,
+    },
+  });
   // 3. Structured Data (JSON-LD)
   const jsonLd = {
     "@context": "https://schema.org",
@@ -84,29 +157,7 @@ export default async function LocationLandingPage({
       {
         "@type": "BreadcrumbList",
         "@id": `${canonicalUrl}#breadcrumb`,
-        itemListElement: [
-          {
-            "@type": "ListItem",
-            position: 1,
-            item: { "@id": baseUrl, name: "Home" },
-          },
-          {
-            "@type": "ListItem",
-            position: 2,
-            item: {
-              "@id": `${baseUrl}/bimbel-osn-imo-jismo-iso-ksn-terbaik`,
-              name: "Bimbel & Les Privat Olimpiade",
-            },
-          },
-          {
-            "@type": "ListItem",
-            position: 3,
-            item: {
-              "@id": canonicalUrl,
-              name: `Les Privat Olimpiade di ${formattedName}`,
-            },
-          },
-        ],
+        itemListElement: breadcrumbItems,
       },
       {
         "@type": "EducationalOrganization",

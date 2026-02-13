@@ -23,8 +23,10 @@ export function generateLocationMetadata(
     : `${baseUrl}/images/images-cta.webp`;
 
   // 4. Definisi Konten SEO
-  const ogTitle = `📚 Les Privat Olimpiade ${formattedName} • OSN IMO ISO Unggulan`;
-  const ogDescription = `Kursus Les Privat Olimpiade ${formattedName} Terbaik ✔️ Dibimbing GURU BERPENGALAMAN ✔️ Peraih Lisensi OSN ✔️ Garansi REPORT CARD ✍️ Daftar? Segera kunjungi situs kami...`;
+  // 4. Definisi Konten SEO
+  const ogTitle = `Les Privat OSN ${formattedName} SD SMP SMA | Bimbel Olimpiade Matematika, Fisika, Kimia Terbaik`;
+
+  const ogDescription = `Les Privat & Bimbel Olimpiade SD, SMP, SMA di ${formattedName} untuk OSN, KSN, IMO, JISMO, dan ISO. Program Matematika, Fisika, Kimia, Biologi, IPA, Astronomi dengan mentor berpengalaman, kelas intensif, tryout rutin, dan pendampingan hingga tingkat nasional. Daftar sekarang!`;
 
   // 5. Return Object Metadata
   return {
@@ -32,15 +34,26 @@ export function generateLocationMetadata(
     title: ogTitle,
     description: ogDescription,
     keywords: [
-      `bimbel di ${formattedName}`,
-      `les privat OSN ${formattedName}`,
-      "osn",
-      "imo",
-      "iso",
-      "kompetisi sains",
-      "ksn",
-      "guru privat",
-      "Akademi OSN",
+      `bimbel les privat osn ${formattedName}`,
+      `bimbel olimpiade sd ${formattedName}`,
+      `bimbel olimpiade smp ${formattedName}`,
+      `bimbel olimpiade sma ${formattedName}`,
+      `les privat sd ${formattedName}`,
+      `les privat smp ${formattedName}`,
+      `les privat sma ${formattedName}`,
+      `bimbel ksn ${formattedName}`,
+      `les privat imo ${formattedName}`,
+      `bimbel jismo ${formattedName}`,
+      `bimbel iso ${formattedName}`,
+      `osn matematika ${formattedName}`,
+      `osn fisika ${formattedName}`,
+      `osn kimia ${formattedName}`,
+      `osn biologi ${formattedName}`,
+      `osn ipa ${formattedName}`,
+      `osn astronomi ${formattedName}`,
+      `program persiapan osn ${formattedName}`,
+      `guru privat olimpiade ${formattedName}`,
+      `akademi osn ${formattedName}`,
     ],
     robots: {
       index: true,
