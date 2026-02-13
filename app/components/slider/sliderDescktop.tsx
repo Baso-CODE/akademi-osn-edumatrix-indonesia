@@ -58,7 +58,7 @@ const SliderDescktop = () => {
 
   return (
     <div className="w-full md:block hidden">
-      <div className="max-w-310 px-2 mx-auto">
+      <div className="max-w-360 px-2 lg:px-4 mx-auto">
         <Carousel
           responsive={responsive}
           infinite

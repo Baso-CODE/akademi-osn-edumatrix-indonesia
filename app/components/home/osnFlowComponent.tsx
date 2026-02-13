@@ -166,7 +166,7 @@ const OsnFlowComponent = () => {
           </div>
 
           <div className="shrink-0">
-            <div className="inline-flex flex-col items-center bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 min-w-[200px]">
+            <div className="inline-flex flex-col items-center bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 min-w-50">
               <span className="text-4xl font-bold mb-1">C5 - C6</span>
               <span className="text-sm font-medium text-blue-200">
                 Level Kognitif

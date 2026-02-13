@@ -8,7 +8,7 @@ const PaketBelajarOSN = () => {
 
   return (
     <div>
-      <div className="flex container mx-auto items-center justify-center my-[5vh] py-[10vh]  px-2 lg:px-0">
+      <div className="flex container mx-auto items-center justify-center my-[5vh] py-[10vh]  px-2 lg:px-4">
         <div className=" w-full">
           {/* Judul utama */}
           <h2 className="text-center font-title text-3xl md:text-3xl lg:text-4xl font-bold text-[#133b79] mb-4">

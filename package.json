@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "eslint"
   },
-   "engines": {
+  "engines": {
     "node": ">=20.9.0"
   },
   "dependencies": {
@@ -17,7 +17,9 @@
     "classnames": "^2.5.1",
     "framer-motion": "^12.30.0",
     "lucide-react": "^0.563.0",
+    "motion": "^12.34.0",
     "next": "16.1.6",
+    "npm": "^11.10.0",
     "react": "19.2.3",
     "react-dom": "19.2.3",
     "react-fast-marquee": "^1.6.5",
