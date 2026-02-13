@@ -80,6 +80,7 @@ export default async function KelurahanPage({
         kotaSlug,
         kabupatenSlug,
         kecamatanSlug,
+        kelurahanSlug,
       }}
     />
   );

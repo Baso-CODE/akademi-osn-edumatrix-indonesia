@@ -141,6 +141,18 @@ export default async function LocationLandingPage({
     });
   }
 
+  // Kelurahan
+  if (kelurahanSlug) {
+    breadcrumbItems.push({
+      "@type": "ListItem",
+      position: position++,
+      item: {
+        "@id": `${basePath}/${kotaSlug}/${kabupatenSlug}/${kecamatanSlug}/${kelurahanSlug}`,
+        name: formatSlugToTitle(kelurahanSlug),
+      },
+    });
+  }
+
   // Halaman aktif (terakhir)
   breadcrumbItems.push({
     "@type": "ListItem",
