@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { FaCheck } from "react-icons/fa";
 
 const PaketBelajarOSN = () => {
@@ -54,7 +55,8 @@ const PaketBelajarOSN = () => {
                 ))}
               </ul>
               {/* Tombol Tanya Kelas untuk Paket Priority */}
-              <a
+              <Link
+                aria-label="Tanya kelas melalui WhatsApp (membuka di tab baru)"
                 href={waLinkPriority}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -79,7 +81,7 @@ const PaketBelajarOSN = () => {
                 <span className="z-10 ">
                   <span className="mr-2">💬</span>Tanya Kelas
                 </span>
-              </a>
+              </Link>
             </div>
 
             {/* PAKET DELUXE */}
@@ -110,12 +112,13 @@ const PaketBelajarOSN = () => {
                 ))}
               </ul>
 
-              <a
+              <Link
                 href={waLinkDeluxe}
                 target="_blank"
+                aria-label="Tanya kelas melalui WhatsApp (membuka di tab baru)"
                 rel="noopener noreferrer"
                 className="mt-2 group relative inline-flex h-14 items-center justify-center rounded-full bg-[#faae17] py-1 pl-6 pr-14 font-medium text-neutral-50 transition-all duration-300">
-                <span className="z-10 pr-2">
+                <span className="z-10 pr-2 font-bold uppercase">
                   <span className="mr-2">💬</span>Tanya Kelas
                 </span>
                 <div className="absolute left-1 inline-flex h-12 w-12 items-center justify-end rounded-full bg-[#04397d] transition-[width] group-hover:w-[calc(100%-8px)]">
@@ -135,7 +138,7 @@ const PaketBelajarOSN = () => {
                     </svg>
                   </div>
                 </div>
-              </a>
+              </Link>
             </div>
           </div>
         </div>

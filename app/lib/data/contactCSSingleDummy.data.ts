@@ -16,7 +16,7 @@ export const dummyContactCsData: ContactCs[] = [
     nomor_hp: "0858-1509-5359",
     nama_cs: "Kak Nevita",
     link_cta:
-      "https://api.whatsapp.com/send?phone=6285815095359&text=Halo%20Kak%20Nevita,%20Saya%20ingin%20tanya%20program%20belajar%20OSN%20yang%20ada%20di%20Edumatrix%20Indonesia.%20Apa%20saja%20jenis%20program%20belajar%20dan%20pilihan%20paket.%0A%0AInfo%20dari%3A%20https%3A%2F%2Folimpiade.edumatrix-indonesia.com%2F",
+      "https://api.whatsapp.com/send?phone=6285815095359&text=Halo%20Kak%20Nevita,%20Saya%20ingin%20tanya%20program%20belajar%20OSN%20yang%20ada%20di%20Edumatrix%20Indonesia.%20Apa%20saja%20jenis%20program%20belajar%20dan%20pilihan%20paket.%0A%0AInfo%20dari%3A%20https%3A%2F%2Fhttps://akademiosn.com/%2F",
     isDeleted: false,
     weight: 3,
     display_order: 1,

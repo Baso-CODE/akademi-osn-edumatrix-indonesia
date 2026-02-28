@@ -81,7 +81,7 @@ const OsnFlowComponent = () => {
                   </div>
 
                   {/* Step Number */}
-                  <span className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">
+                  <span className="text-sm font-bold text-slate-900 uppercase tracking-widest mb-2">
                     Tahap 0{stage.id}
                   </span>
 
@@ -89,7 +89,7 @@ const OsnFlowComponent = () => {
                   <h3 className="text-xl font-bold text-[#04397D] mb-3 font-title">
                     {stage.title}
                   </h3>
-                  <p className="text-sm text-gray-600 leading-relaxed font-desc">
+                  <p className="text-md text-gray-800 leading-relaxed font-desc">
                     {stage.desc}
                   </p>
                 </div>

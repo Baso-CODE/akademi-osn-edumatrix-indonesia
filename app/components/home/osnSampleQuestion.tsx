@@ -25,7 +25,7 @@ export default function OSNSampleQuestion() {
                 <span className="bg-blue-50 text-[#04397D] text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider">
                   OSN Matematika
                 </span>
-                <span className="text-gray-400 text-sm font-medium">
+                <span className="text-gray-400 text-md font-medium">
                   Soal No. 1
                 </span>
               </div>
@@ -47,7 +47,7 @@ export default function OSNSampleQuestion() {
             <div className="relative bg-gray-50 flex-1 p-6 border-t border-gray-100">
               <div className="flex items-center gap-2 mb-3">
                 <FileText className="w-4 h-4 text-[#04397D]" />
-                <h4 className="font-bold text-[#04397D] text-sm uppercase">
+                <h4 className="font-bold text-[#04397D] text-md uppercase">
                   Preview Pembahasan
                 </h4>
               </div>
@@ -89,7 +89,7 @@ export default function OSNSampleQuestion() {
                 <span className="bg-blue-50 text-[#04397D] text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider">
                   OSN IPA (Fisika)
                 </span>
-                <span className="text-gray-400 text-sm font-medium">
+                <span className="text-gray-400 text-md font-medium">
                   Soal No. 2
                 </span>
               </div>
@@ -110,7 +110,7 @@ export default function OSNSampleQuestion() {
             <div className="relative bg-gray-50 flex-1 p-6 border-t border-gray-100">
               <div className="flex items-center gap-2 mb-3">
                 <FileText className="w-4 h-4 text-[#04397D]" />
-                <h4 className="font-bold text-[#04397D] text-sm uppercase">
+                <h4 className="font-bold text-[#04397D] text-md uppercase">
                   Preview Pembahasan
                 </h4>
               </div>

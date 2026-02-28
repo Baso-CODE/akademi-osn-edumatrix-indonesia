@@ -46,13 +46,15 @@ const JumlahSiswa = () => {
               <Image
                 width={1000}
                 height={1000}
+                priority
+                fetchPriority="high"
                 loading="eager"
                 src="/images/presentase-siswa-master-teacher-edumatrix.webp"
                 alt="presentase siswa Akademi OSN"
                 className="z-10"
               />
 
-              <div className="absolute top-10 left-0 w-full flex justify-center z-10">
+              <div className="absolute top-2 md:top-10 left-0 w-full flex justify-center z-10">
                 <div className="flex flex-col items-center text-white">
                   <motion.p
                     key={`siswa-${currentIndex}`}
@@ -68,7 +70,7 @@ const JumlahSiswa = () => {
                 </div>
               </div>
 
-              <div className="absolute top-40 left-0 w-full flex justify-center z-10">
+              <div className="absolute top-26 md:top-40 left-0 w-full flex justify-center z-10">
                 <div className="flex flex-col items-center text-white">
                   <motion.p
                     key={`number-${currentIndex}`}
@@ -84,7 +86,7 @@ const JumlahSiswa = () => {
                 </div>
               </div>
 
-              <div className="absolute top-70 left-0 w-full flex justify-center z-10">
+              <div className="absolute top-50 md:top-68 left-0 w-full flex justify-center z-10">
                 <div className="flex flex-col items-center text-white">
                   <motion.p
                     key={`percent-${currentIndex}`}
