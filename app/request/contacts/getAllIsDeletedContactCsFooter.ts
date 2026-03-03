@@ -5,7 +5,7 @@ import { baseUrlClient } from "@/app/utils/config";
 export async function getAllIsDeletedContactCsFooter(): Promise<ContactCs[]> {
   try {
     const response = await fetch(`${baseUrlClient}/contactcs/isDeleted/all`, {
-      cache: "force-cache",
+      cache: "no-store",
     });
 
     if (!response.ok) {
@@ -17,6 +17,6 @@ export async function getAllIsDeletedContactCsFooter(): Promise<ContactCs[]> {
     return Array.isArray(result.data) ? result.data : [];
   } catch (error) {
     console.error("Error fetching footer contact CS:", error);
-    return []; // Fallback aman
+    return [];
   }
 }
