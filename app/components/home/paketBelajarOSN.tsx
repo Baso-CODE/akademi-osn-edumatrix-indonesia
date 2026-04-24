@@ -3,9 +3,9 @@ import { FaCheck } from "react-icons/fa";
 
 const PaketBelajarOSN = () => {
   const waLinkPriority =
-    "https://api.whatsapp.com/send?phone=6285724543040&text=Halo%20Kak%20Putri%20https://akademiosn.com%20saya%20ingin%20Daftar%20Paket%20Priority%20Bimbel%20OSN.%20Bagaimana%20penjelasan%20detail%20programnya%3F";
+    "https://api.whatsapp.com/send?phone=6285724543040&text=Halo%20Kak%20Putri%20https://akademiosn.com%20saya%20ingin%20Daftar%20ULTIMATE%20MASTERY%20Bimbel%20OSN.%20Bagaimana%20penjelasan%20detail%20programnya%3F";
   const waLinkDeluxe =
-    "https://api.whatsapp.com/send?phone=6285724543040&text=Halo%20Kak%20Putri%20https://akademiosn.com%20saya%20ingin%20Daftar%20Paket%20Deluxe%20Bimbel%20OSN.%20Bagaimana%20penjelasan%20detail%20programnya%3F";
+    "https://api.whatsapp.com/send?phone=6285724543040&text=Halo%20Kak%20Putri%20https://akademiosn.com%20saya%20ingin%20Daftar%20CHAMPION%20SERIES%20Bimbel%20OSN.%20Bagaimana%20penjelasan%20detail%20programnya%3F";
 
   return (
     <div>
@@ -26,11 +26,11 @@ const PaketBelajarOSN = () => {
 
           {/* Box Paket (Grid untuk responsif) */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
-            {/* PAKET PRIORITY */}
+            {/* ULTIMATE MASTERY */}
             <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform  flex flex-col ">
               <div className="bg-[#00317e] text-white rounded-t-xl -mx-6 -mt-6 px-6 py-8 mb-6">
                 <h2 className="text-2xl md:text-3xl font-extrabold text-center leading-tight font-title">
-                  PAKET PRIORITY
+                  ULTIMATE MASTERY
                 </h2>
               </div>
               <ul className="space-y-4 grow font-desc">
@@ -54,7 +54,7 @@ const PaketBelajarOSN = () => {
                   </li>
                 ))}
               </ul>
-              {/* Tombol Tanya Kelas untuk Paket Priority */}
+              {/* Tombol Tanya Kelas untuk ULTIMATE MASTERY */}
               <Link
                 aria-label="Tanya kelas melalui WhatsApp (membuka di tab baru)"
                 href={waLinkPriority}
@@ -84,11 +84,11 @@ const PaketBelajarOSN = () => {
               </Link>
             </div>
 
-            {/* PAKET DELUXE */}
+            {/* CHAMPION SERIES */}
             <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform  flex flex-col">
               <div className="bg-[#00317e] text-white rounded-t-xl -mx-6 -mt-6 px-6 py-8 mb-6">
                 <h2 className="text-2xl md:text-3xl font-extrabold text-center leading-tight font-title">
-                  PAKET DELUXE
+                  CHAMPION SERIES
                 </h2>
               </div>
               <ul className="space-y-4 grow">
