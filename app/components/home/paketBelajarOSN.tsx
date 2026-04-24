@@ -2,9 +2,9 @@ import Link from "next/link";
 import { FaCheck } from "react-icons/fa";
 
 const PaketBelajarOSN = () => {
-  const waLinkPriority =
+  const waLinkUltimateMastery =
     "https://api.whatsapp.com/send?phone=6285724543040&text=Halo%20Kak%20Putri%20https://akademiosn.com%20saya%20ingin%20Daftar%20ULTIMATE%20MASTERY%20Bimbel%20OSN.%20Bagaimana%20penjelasan%20detail%20programnya%3F";
-  const waLinkDeluxe =
+  const waLinkChampionSeries =
     "https://api.whatsapp.com/send?phone=6285724543040&text=Halo%20Kak%20Putri%20https://akademiosn.com%20saya%20ingin%20Daftar%20CHAMPION%20SERIES%20Bimbel%20OSN.%20Bagaimana%20penjelasan%20detail%20programnya%3F";
 
   return (
@@ -57,7 +57,7 @@ const PaketBelajarOSN = () => {
               {/* Tombol Tanya Kelas untuk ULTIMATE MASTERY */}
               <Link
                 aria-label="Tanya kelas melalui WhatsApp (membuka di tab baru)"
-                href={waLinkPriority}
+                href={waLinkUltimateMastery}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mt-2 group relative inline-flex h-14 items-center justify-center rounded-full bg-[#faae17] py-1 pl-14 pr-6 font-medium text-neutral-50 transition-all duration-300 ">
@@ -113,7 +113,7 @@ const PaketBelajarOSN = () => {
               </ul>
 
               <Link
-                href={waLinkDeluxe}
+                href={waLinkChampionSeries}
                 target="_blank"
                 aria-label="Tanya kelas melalui WhatsApp (membuka di tab baru)"
                 rel="noopener noreferrer"
