@@ -17,7 +17,8 @@ import Pengajar from "./components/home/pengajar";
 import Pilihan from "./components/home/pilihan";
 import Program from "./components/home/programBelajar";
 import SekolahSiswa from "./components/home/sekolahSiswa";
-import SuccessStorySlider from "./components/home/successStorySlider";
+import SuccessStoryGrid from "./components/home/successStoryNotSlider";
+import TestimoniGrid from "./components/home/testimoniNotSlider";
 import TingkatPendidikan from "./components/home/tingkatPendidikan";
 import MediaMassa from "./components/mediaMassa/mediaMassa";
 import Promo from "./components/promo";
@@ -88,7 +89,9 @@ export default function Home() {
       <Pengajar />
       <OSNSampleQuestion />
       <Gallery />
-      <SuccessStorySlider />
+      {/* <SuccessStorySlider /> */}
+      <SuccessStoryGrid />
+      <TestimoniGrid />
       <TransformationOSN />
       <GoldenTicketShowcase />
       <AsalSekolahSiswaEdumatrix />

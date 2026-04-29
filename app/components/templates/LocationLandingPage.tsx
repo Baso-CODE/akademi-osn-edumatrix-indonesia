@@ -21,6 +21,8 @@ import Pengajar from "../home/pengajar";
 import Pilihan from "../home/pilihan";
 import Program from "../home/programBelajar";
 import SekolahSiswa from "../home/sekolahSiswa";
+import SuccessStoryGrid from "../home/successStoryNotSlider";
+import TestimoniGrid from "../home/testimoniNotSlider";
 import TingkatPendidikan from "../home/tingkatPendidikan";
 import ListKabupaten from "../lisKabupaten";
 import ListKecamatan from "../listKecamatan";
@@ -254,6 +256,8 @@ export default async function LocationLandingPage({
       <Pengajar />
       <OSNSampleQuestion />
       <Gallery />
+      <SuccessStoryGrid />
+      <TestimoniGrid />
       <TransformationOSN />
       <GoldenTicketShowcase />
       <AsalSekolahSiswaEdumatrix />
