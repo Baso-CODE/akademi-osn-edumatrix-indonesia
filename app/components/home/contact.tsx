@@ -1,14 +1,30 @@
+"use client";
+
 import { getAllContactCsIsDeleted } from "@/app/request/contacts/getAllIsDeletedContactCs";
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 import { dummyContactCsData } from "../data/contactCs.dummyData";
+// Pastikan path import tipe data sesuai dengan struktur folder Anda
+import { ContactCs } from "@/app/types/contact.type";
 
-export default async function Contact() {
-  const contactCsData = await getAllContactCsIsDeleted();
+export default function Contact() {
+  const [contactCsData, setContactCsData] = useState<ContactCs[]>(
+    dummyContactCsData.slice(0, 2),
+  );
+
+  useEffect(() => {
+    const fetchContacts = async () => {
+      const contacts = await getAllContactCsIsDeleted();
+      setContactCsData(contacts);
+    };
+    fetchContacts();
+  }, []); // Hanya berjalan di client-side saat komponen dimuat
 
   const isEmpty = contactCsData.length === 0;
-
-  const contactsToShow = isEmpty ? dummyContactCsData : contactCsData;
+  const contactsToShow = isEmpty
+    ? dummyContactCsData.slice(0, 2)
+    : contactCsData;
 
   return (
     <div className="flex justify-center bg-[#04397D] text-white">

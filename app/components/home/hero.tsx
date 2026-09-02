@@ -1,15 +1,24 @@
+"use client";
+
+import { fallbackContact } from "@/app/lib/data/contactCSSingleDummy.data";
 import { getDataContactCsDummy } from "@/app/lib/getDummyDataRequest/getContactCsDummy.request";
 import { ContactCs } from "@/app/types/contact.type";
 import * as motion from "motion/react-client";
 import Image from "next/image";
 import Link from "next/link";
-import { fallbackContact } from "../data/contactCs.dummyData";
+import { useEffect, useState } from "react";
 
-export default async function Hero() {
-  let data: ContactCs | null = null;
-  data = await getDataContactCsDummy();
+export default function Hero() {
+  const [contact, setContact] = useState<ContactCs>(fallbackContact);
 
-  const contact = data || fallbackContact;
+  useEffect(() => {
+    const fetchContact = async () => {
+      const selectedContact = await getDataContactCsDummy();
+      setContact(selectedContact);
+    };
+    fetchContact();
+  }, []);
+
   const link = contact.link_cta || "/contact";
 
   const bounceTransition = {
@@ -66,7 +75,6 @@ export default async function Hero() {
               untuk OSN
             </motion.h2>
 
-            {/* Paragraf - Bounce Right */}
             <motion.p
               className="mb-8 font-desc text-[14px] md:text-[16px] leading-4.75 font-bold"
               initial="hidden"
@@ -93,6 +101,8 @@ export default async function Hero() {
               transition={{ ...bounceTransition, delay: 0.4 }}>
               <Link
                 href={link}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="group relative inline-flex w-100% md:w-[50%] lg:w-[40%] h-14 items-center justify-center rounded-full bg-[#F68507] py-1 pl-6 pr-14 font-medium text-neutral-50 shadow-lg hover:scale-105 transition-transform duration-300">
                 <span className="z-10 pr-2 font-bold font-title leading-relaxed">
                   Daftar Sekarang
@@ -110,7 +120,8 @@ export default async function Hero() {
                         d="M8.14645 3.14645C8.34171 2.95118 8.65829 2.95118 8.85355 3.14645L12.8536 7.14645C13.0488 7.34171 13.0488 7.65829 12.8536 7.85355L8.85355 11.8536C8.65829 12.0488 8.34171 12.0488 8.14645 11.8536C7.95118 11.6583 7.95118 11.3417 8.14645 11.1464L11.2929 8H2.5C2.22386 8 2 7.77614 2 7.5C2 7.22386 2.22386 7 2.5 7H11.2929L8.14645 3.85355C7.95118 3.65829 7.95118 3.34171 8.14645 3.14645Z"
                         fill="currentColor"
                         fillRule="evenodd"
-                        clipRule="evenodd"></path>
+                        clipRule="evenodd"
+                      />
                     </svg>
                   </div>
                 </div>
@@ -158,7 +169,8 @@ export default async function Hero() {
           <path
             fill="#FFFFFF"
             fillOpacity="1"
-            d="M0,224L24,229.3C48,235,96,245,144,234.7C192,224,240,192,288,186.7C336,181,384,203,432,224C480,245,528,267,576,272C624,277,672,267,720,245.3C768,224,816,192,864,186.7C912,181,960,203,1008,208C1056,213,1104,203,1152,186.7C1200,171,1248,149,1296,154.7C1344,160,1392,192,1416,208L1440,224L1440,320L1416,320C1392,320,1344,320,1296,320C1248,320,1200,320,1152,320C1104,320,1056,320,1008,320C960,320,912,320,864,320C816,320,768,320,720,320C672,320,624,320,576,320C528,320,480,320,432,320C384,320,336,320,288,320C240,320,192,320,144,320C96,320,48,320,24,320L0,320Z"></path>
+            d="M0,224L24,229.3C48,235,96,245,144,234.7C192,224,240,192,288,186.7C336,181,384,203,432,224C480,245,528,267,576,272C624,277,672,267,720,245.3C768,224,816,192,864,186.7C912,181,960,203,1008,208C1056,213,1104,203,1152,186.7C1200,171,1248,149,1296,154.7C1344,160,1392,192,1416,208L1440,224L1440,320L1416,320C1392,320,1344,320,1296,320C1248,320,1200,320,1152,320C1104,320,1056,320,1008,320C960,320,912,320,864,320C816,320,768,320,720,320C672,320,624,320,576,320C528,320,480,320,432,320C384,320,336,320,288,320C240,320,192,320,144,320C96,320,48,320,24,320L0,320Z"
+          />
         </svg>
       </motion.div>
     </section>
