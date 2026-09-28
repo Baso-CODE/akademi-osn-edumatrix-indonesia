@@ -21,6 +21,32 @@ export default function Hero() {
 
   const link = contact.link_cta || "/contact";
 
+  // Cek apakah link cta mengandung wilayah Jabodetabek atau Yogyakarta (case-insensitive)
+  // Atau kita bisa mengecek dari contact data jika ada properti wilayah/lokasi.
+  // Karena ini komponen utama (Hero general landing page), kita sediakan pengecekan umum atau prop jika ada,
+  // namun jika komponen ini independen, kita bisa cek dari teks atau URL/fallback, atau membuat kondisi fleksibel.
+  // Berdasarkan pola sebelumnya, berikut implementasi fungsi pengecekannya:
+  const isJabodetabekOrJogja = () => {
+    // Mengecek string link atau properti contact lain jika mencakup wilayah offline
+    const checkString = (link + JSON.stringify(contact)).toLowerCase();
+    const keywords = [
+      "jakarta",
+      "bogor",
+      "depok",
+      "tangerang",
+      "bekasi",
+      "yogyakarta",
+      "jogja",
+      "sleman",
+      "bantul",
+      "kulon progo",
+      "gunungkidul",
+    ];
+    return keywords.some((keyword) => checkString.includes(keyword));
+  };
+
+  const showOfflineBadge = isJabodetabekOrJogja();
+
   const bounceTransition = {
     type: "spring" as const,
     stiffness: 160,
@@ -53,7 +79,7 @@ export default function Hero() {
 
   return (
     <section className="relative bg-[#04397D] flex items-center justify-center overflow-hidden">
-      <div className="py-24 px-4 lg:px-0 mt-10 text-white max-w-310 lg:min-h-[70vh] xl:min-h-[74vh] relative z-10">
+      <div className="py-24 px-4 lg:px-0 mt-10 text-white max-w-310 lg:min-h-[78vh] xl:min-h-[82vh] relative z-10">
         <div className="flex flex-col lg:flex-row gap-14">
           <div className="lg:w-1/2 flex flex-col justify-center">
             <motion.h1
@@ -66,7 +92,7 @@ export default function Hero() {
             </motion.h1>
 
             <motion.h2
-              className="uppercase text-[40px] font-bold font-title text-[#faae17] mb-4"
+              className="uppercase text-[40px] font-bold font-title text-[#faae17] mb-6"
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
@@ -74,6 +100,32 @@ export default function Hero() {
               variants={fadeInDown}>
               untuk OSN
             </motion.h2>
+
+            {/* Badges Area */}
+            <motion.div
+              className="flex flex-wrap gap-3 mb-6"
+              initial={{ opacity: 0, y: -20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ ...bounceTransition, delay: 0.15 }}>
+              {/* Badge Online Selalu Ada */}
+              <div className="inline-flex items-center gap-2 px-4 py-2 border border-blue-400/60 bg-white/5 rounded-full w-fit backdrop-blur-sm shadow-sm">
+                <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
+                <span className="text-white text-[13px] md:text-[14px] font-medium tracking-wide">
+                  🌐 Online — Seluruh Indonesia
+                </span>
+              </div>
+
+              {/* Badge Offline Kondisional */}
+              {showOfflineBadge && (
+                <div className="inline-flex items-center gap-2 px-4 py-2 border border-[#faae17]/80 bg-white/5 rounded-full w-fit backdrop-blur-sm shadow-sm">
+                  <span className="w-2 h-2 rounded-full bg-[#faae17] animate-pulse"></span>
+                  <span className="text-[#faae17] text-[13px] md:text-[14px] font-medium tracking-wide">
+                    📍 Offline — Tatap Muka Tersedia
+                  </span>
+                </div>
+              )}
+            </motion.div>
 
             <motion.p
               className="mb-8 font-desc text-[14px] md:text-[16px] leading-4.75 font-bold"
@@ -103,7 +155,7 @@ export default function Hero() {
                 href={link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group relative inline-flex w-100% md:w-[50%] lg:w-[40%] h-14 items-center justify-center rounded-full bg-[#F68507] py-1 pl-6 pr-14 font-medium text-neutral-50 shadow-lg hover:scale-105 transition-transform duration-300">
+                className="group relative inline-flex w-full md:w-[50%] lg:w-[40%] h-14 items-center justify-center rounded-full bg-[#F68507] py-1 pl-6 pr-14 font-medium text-neutral-50 shadow-lg hover:scale-105 transition-transform duration-300">
                 <span className="z-10 pr-2 font-bold font-title leading-relaxed">
                   Daftar Sekarang
                 </span>

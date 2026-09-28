@@ -17,13 +17,35 @@ export default function HeroKelurahan({
     damping: 12,
   };
 
+  // Cek apakah kelurahan termasuk wilayah Jabodetabek atau Yogyakarta (case-insensitive)
+  const isJabodetabekOrJogja = () => {
+    if (!kelurahanName) return false;
+    const lowerKelurahan = kelurahanName.toLowerCase();
+    const keywords = [
+      "jakarta",
+      "bogor",
+      "depok",
+      "tangerang",
+      "bekasi",
+      "yogyakarta",
+      "jogja",
+      "sleman",
+      "bantul",
+      "kulon progo",
+      "gunungkidul",
+    ];
+    return keywords.some((keyword) => lowerKelurahan.includes(keyword));
+  };
+
+  const showOfflineBadge = isJabodetabekOrJogja();
+
   return (
     <section className="relative bg-[#04397D] flex items-center justify-center overflow-hidden">
-      <div className="py-24 px-2 mt-8 text-white max-w-310 lg:min-h-[70vh] xl:min-h-[73vh] relative z-10">
+      <div className="py-24 px-2 mt-8 text-white max-w-310 lg:min-h-[78vh] xl:min-h-[82vh] relative z-10">
         <div className="flex flex-col lg:flex-row gap-14">
           <div className="lg:w-1/2">
             <motion.h1
-              className="text-[36px] uppercase font-bold leading-9 font-title mb-5"
+              className="text-[36px] uppercase font-bold leading-9 font-title mb-6"
               initial={{ opacity: 0, y: -50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -32,6 +54,32 @@ export default function HeroKelurahan({
               <span className="text-[#faae17] ">{kelurahanName}</span> Terbaik
               #1
             </motion.h1>
+
+            {/* Badges Area */}
+            <motion.div
+              className="flex flex-wrap gap-3 mb-6"
+              initial={{ opacity: 0, y: -20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ ...bounceTransition, delay: 0.1 }}>
+              {/* Badge Online Selalu Ada */}
+              <div className="inline-flex items-center gap-2 px-4 py-2 border border-blue-400/60 bg-white/5 rounded-full w-fit backdrop-blur-sm shadow-sm">
+                <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
+                <span className="text-white text-[13px] md:text-[14px] font-medium tracking-wide">
+                  🌐 Online — Seluruh Indonesia
+                </span>
+              </div>
+
+              {/* Badge Offline Hanya Tampil untuk Jabodetabek & Yogyakarta */}
+              {showOfflineBadge && (
+                <div className="inline-flex items-center gap-2 px-4 py-2 border border-[#faae17]/80 bg-white/5 rounded-full w-fit backdrop-blur-sm shadow-sm">
+                  <span className="w-2 h-2 rounded-full bg-[#faae17] animate-pulse"></span>
+                  <span className="text-[#faae17] text-[13px] md:text-[14px] font-medium tracking-wide">
+                    📍 Offline — Tatap Muka di {kelurahanName}
+                  </span>
+                </div>
+              )}
+            </motion.div>
 
             <motion.p
               className="mb-4 font-desc text-[1rem] leading-4.75 font-medium"

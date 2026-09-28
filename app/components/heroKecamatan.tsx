@@ -18,15 +18,37 @@ export default function HeroKecamatan({
     damping: 12, // Pengereman agar membal kenyal
   };
 
+  // Cek apakah kecamatan termasuk wilayah Jabodetabek atau Yogyakarta (case-insensitive)
+  const isJabodetabekOrJogja = () => {
+    if (!kecamatanName) return false;
+    const lowerKecamatan = kecamatanName.toLowerCase();
+    const keywords = [
+      "jakarta",
+      "bogor",
+      "depok",
+      "tangerang",
+      "bekasi",
+      "yogyakarta",
+      "jogja",
+      "sleman",
+      "bantul",
+      "kulon progo",
+      "gunungkidul",
+    ];
+    return keywords.some((keyword) => lowerKecamatan.includes(keyword));
+  };
+
+  const showOfflineBadge = isJabodetabekOrJogja();
+
   return (
     <section className="relative bg-[#04397D] flex items-center justify-center overflow-hidden">
-      <div className="py-24 px-2 mt-10 text-white max-w-310 lg:min-h-[70vh] xl:min-h-[74vh] relative z-10">
+      <div className="py-24 px-2 mt-10 text-white max-w-310 lg:min-h-[78vh] xl:min-h-[82vh] relative z-10">
         <div className="flex flex-col lg:flex-row gap-14">
           {/* --- KOLOM KIRI (TEKS & TOMBOL) --- */}
           <div className="lg:w-1/2 flex flex-col justify-center">
             {/* JUDUL: Jatuh dari atas (Menggantikan fade-down) */}
             <motion.h1
-              className="text-[36px] uppercase font-bold leading-10 font-title mb-7"
+              className="text-[36px] uppercase font-bold leading-10 font-title mb-6"
               initial={{ opacity: 0, y: -50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -35,6 +57,32 @@ export default function HeroKecamatan({
               <span className="text-[#faae17] ">{kecamatanName}</span> TERBAIK
               #1
             </motion.h1>
+
+            {/* Badges Area */}
+            <motion.div
+              className="flex flex-wrap gap-3 mb-6"
+              initial={{ opacity: 0, y: -20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ ...bounceTransition, delay: 0.1 }}>
+              {/* Badge Online Selalu Ada */}
+              <div className="inline-flex items-center gap-2 px-4 py-2 border border-blue-400/60 bg-white/5 rounded-full w-fit backdrop-blur-sm shadow-sm">
+                <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
+                <span className="text-white text-[13px] md:text-[14px] font-medium tracking-wide">
+                  🌐 Online — Seluruh Indonesia
+                </span>
+              </div>
+
+              {/* Badge Offline Hanya Tampil untuk Jabodetabek & Yogyakarta */}
+              {showOfflineBadge && (
+                <div className="inline-flex items-center gap-2 px-4 py-2 border border-[#faae17]/80 bg-white/5 rounded-full w-fit backdrop-blur-sm shadow-sm">
+                  <span className="w-2 h-2 rounded-full bg-[#faae17] animate-pulse"></span>
+                  <span className="text-[#faae17] text-[13px] md:text-[14px] font-medium tracking-wide">
+                    📍 Offline — Tatap Muka di {kecamatanName}
+                  </span>
+                </div>
+              )}
+            </motion.div>
 
             {/* DESKRIPSI: Masuk dari kiri (Menggantikan fade-right) */}
             <motion.p
@@ -99,7 +147,6 @@ export default function HeroKecamatan({
           </div>
 
           {/* --- KOLOM KANAN (GAMBAR) --- */}
-          {/* GAMBAR: Masuk dari kanan + Scale membesar (Menggantikan fade-left) */}
           <motion.div
             className="lg:w-1/2 flex justify-center items-center"
             initial={{ opacity: 0, x: 80, scale: 0.8 }}
@@ -112,14 +159,13 @@ export default function HeroKecamatan({
               src="/images/hero-image-kecamatan-page.webp"
               alt={`Les privat dan bimbingan belajar OSN terbaik di ${kecamatanName}. Akademi OSN membantu siswa SD, SMP, dan SMA meraih prestasi Olimpiade Sains Nasional (OSN) dengan pengajar profesional dan metode belajar interaktif di ${kecamatanName}.`}
               className="w-full h-full object-contain drop-shadow-2xl"
-              loading="lazy"
+              loading="eager"
             />
           </motion.div>
         </div>
       </div>
 
       {/* --- WAVE SVG BAWAH --- */}
-      {/* Wave perlahan naik dari bawah untuk menyatukan background */}
       <motion.div
         className="absolute -bottom-px xl:-bottom-22.5 left-0 w-full pointer-events-none"
         initial={{ y: 100, opacity: 0 }}

@@ -6,7 +6,7 @@ export const programBelajarDummy: ProgramBelajar[] = [
     judul_fitur: "Program Terlengkap",
     tagline: "#Sipaling Lengkap",
     foto_icon: "/images/program-belajar/program-osn-terlengkap.webp",
-    nama_admin: "Kak Sari",
+    nama_admin: "Kak Ista",
     description:
       "Program Terlengkap dari Akademi OSN adalah solusi unggul untuk kebutuhan bimbingan dan pendidikan Anda. Kami menawarkan berbagai program yang dirancang untuk memenuhi kebutuhan belajar yang paling komprehensif.",
     isDeleted: false,

@@ -3,10 +3,10 @@ import { ContactCs } from "@/app/types/contact.type";
 export const dummyContactCsData: ContactCs[] = [
   {
     id: 1,
-    nama_cs: "Kak Sari",
+    nama_cs: "Kak Ista",
     nomor_hp: "085712217876",
     link_cta: `https://wa.me/6285712217876?text=${encodeURIComponent(
-      "Halo Kak Sari (https://akademiosn.com/), saya ingin tanya program belajar yang ada di Akademi OSN. Apa saja jenis program belajar dan pilihan paketnya?\n\n---\n*Katalog Kisah Sukses & Bukti Prestasi Siswa Edumatrix:*\nhttps://wa.me/p/28241850095448237/6285712217876",
+      "Halo Kak Ista (https://akademiosn.com/), saya ingin tanya program belajar yang ada di Akademi OSN. Apa saja jenis program belajar dan pilihan paketnya?\n\n---\n*Katalog Kisah Sukses & Bukti Prestasi Siswa Edumatrix:*\nhttps://wa.me/p/28241850095448237/6285712217876",
     )}`,
     isDeleted: false,
     weight: 2,

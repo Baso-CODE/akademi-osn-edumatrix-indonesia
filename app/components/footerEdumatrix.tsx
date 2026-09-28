@@ -25,7 +25,7 @@ export default async function FooterEduMatrix() {
     // {
     //   id: 1,
     //   nomor_hp: "0857-1221-7876",
-    //   nama_cs: "Kak Sari",
+    //   nama_cs: "Kak Ista",
     //   link_cta:
     //     "https://api.whatsapp.com/send?phone=6285712217876&text=Halo%20Kak%20Sari%2C%20Saya%20ingin%20tanya%20program%20belajar%20OSN%20yang%20ada%20di%20Edumatrix%20Indonesia.%20Apa%20saja%20jenis%20program%20belajar%20dan%20pilihan%20paket.%0A%0AInfo%20dari%3A%20https%3A%2F%2Folimpiade.edumatrix-indonesia.com%2F",
     //   isDeleted: false,
