@@ -1,3 +1,5 @@
+import { isValidWilayah } from "@/app/lib/validateWilayah";
+import { notFound } from "next/navigation";
 import LocationLandingPage from "@/app/components/templates/LocationLandingPage";
 import { kabupatenDummy } from "@/app/lib/data/kabupatenDummy.data";
 import { kotaDummy } from "@/app/lib/data/kotaDummy.data";
@@ -14,7 +16,7 @@ export async function generateMetadata({
   const { kotaSlug, kabupatenSlug } = await params;
   return generateLocationMetadata(
     kabupatenSlug,
-    `/bimbel-lesprivat-osn-imo-jismo-iso-ksn-di-kota/${kotaSlug}/${kabupatenSlug}`,
+    `/persiapan-olimpiade/${kotaSlug}/${kabupatenSlug}`,
   );
 }
 
@@ -40,6 +42,8 @@ export default async function KabupatenPage({
   params: Promise<{ kotaSlug: string; kabupatenSlug: string }>;
 }) {
   const { kotaSlug, kabupatenSlug } = await params;
+
+  if (!isValidWilayah({ kotaSlug, kabupatenSlug })) notFound();
 
   return (
     <LocationLandingPage

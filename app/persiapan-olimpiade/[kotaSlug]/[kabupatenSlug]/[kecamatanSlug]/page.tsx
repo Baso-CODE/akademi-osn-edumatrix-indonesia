@@ -1,10 +1,11 @@
+import { isValidWilayah } from "@/app/lib/validateWilayah";
+import { notFound } from "next/navigation";
 import LocationLandingPage from "@/app/components/templates/LocationLandingPage";
 import { kabupatenDummy } from "@/app/lib/data/kabupatenDummy.data";
-import { kecamatanDummy } from "@/app/lib/data/kecamatanDummy.data";
-import { kelurahanDummy } from "@/app/lib/data/kelurahanDummy.data"; // Pastikan file ini ada
+import { kecamatanDummy } from "@/app/lib/data/kecamatanDummy.data"; // Pastikan file ini ada
 import { kotaDummy } from "@/app/lib/data/kotaDummy.data";
 import { generateLocationMetadata } from "@/app/lib/metadata-helper";
-import { Kabupaten, Kecamatan, Kota } from "@/app/types/kota.types";
+import { Kabupaten, Kota } from "@/app/types/kota.types";
 
 /** * 1. Menggunakan Helper Metadata
  */
@@ -15,41 +16,35 @@ export async function generateMetadata({
     kotaSlug: string;
     kabupatenSlug: string;
     kecamatanSlug: string;
-    kelurahanSlug: string;
   }>;
 }) {
-  const { kotaSlug, kabupatenSlug, kecamatanSlug, kelurahanSlug } =
-    await params;
+  const { kotaSlug, kabupatenSlug, kecamatanSlug } = await params;
   return generateLocationMetadata(
-    kelurahanSlug,
-    `/bimbel-lesprivat-osn-imo-jismo-iso-ksn-di-kota/${kotaSlug}/${kabupatenSlug}/${kecamatanSlug}/${kelurahanSlug}`,
+    kecamatanSlug,
+    `/persiapan-olimpiade/${kotaSlug}/${kabupatenSlug}/${kecamatanSlug}`,
   );
 }
 
 /** * 2. Static Site Generation (SSG)
- * Memetakan jalur lengkap 4 level: /kota/kabupaten/kecamatan/kelurahan
+ * Memetakan jalur lengkap: /kota/kabupaten/kecamatan
  */
 export async function generateStaticParams() {
   const paths = [];
 
-  for (const kel of kelurahanDummy) {
-    // Cari silsilah ke atas
-    const parentKec = kecamatanDummy.find(
-      (kec: Kecamatan) => kec.id === kel.kecamatan_id,
-    );
+  for (const kec of kecamatanDummy) {
     const parentKab = kabupatenDummy.find(
-      (kab: Kabupaten) => kab.id === parentKec?.kota_kabupaten_id,
+      (kab: Kabupaten) => kab.id === kec.kota_kabupaten_id,
     );
+    // Cari Kota Induk
     const parentKota = kotaDummy.find(
       (kota: Kota) => kota.id === parentKab?.kota_id,
     );
 
-    if (parentKec && parentKab && parentKota) {
+    if (parentKab && parentKota) {
       paths.push({
         kotaSlug: parentKota.slug,
         kabupatenSlug: parentKab.slug,
-        kecamatanSlug: parentKec.slug,
-        kelurahanSlug: kel.slug,
+        kecamatanSlug: kec.slug,
       });
     }
   }
@@ -59,28 +54,27 @@ export async function generateStaticParams() {
 
 /** * 3. Tampilan Halaman
  */
-export default async function KelurahanPage({
+export default async function KecamatanPage({
   params,
 }: {
   params: Promise<{
     kotaSlug: string;
     kabupatenSlug: string;
     kecamatanSlug: string;
-    kelurahanSlug: string;
   }>;
 }) {
-  const { kotaSlug, kabupatenSlug, kecamatanSlug, kelurahanSlug } =
-    await params;
+  const { kotaSlug, kabupatenSlug, kecamatanSlug } = await params;
+
+  if (!isValidWilayah({ kotaSlug, kabupatenSlug, kecamatanSlug })) notFound();
 
   return (
     <LocationLandingPage
-      slug={kelurahanSlug}
-      type="kelurahan"
+      slug={kecamatanSlug}
+      type="kecamatan"
       allSlugs={{
         kotaSlug,
         kabupatenSlug,
         kecamatanSlug,
-        kelurahanSlug,
       }}
     />
   );

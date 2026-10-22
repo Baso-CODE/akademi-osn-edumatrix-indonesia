@@ -1,5 +1,4 @@
 @import "tailwindcss";
-@import "aos/dist/aos.css";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -14,12 +13,12 @@ body {
 }
 
 /* === Local Font === */
-@font-face {
+/* @font-face {
   font-family: "Super Pencil";
   src: url("/fonts/Super-Pencil.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
-}
+} */
 
 /* === Custom Font Classes === */
 @layer components {

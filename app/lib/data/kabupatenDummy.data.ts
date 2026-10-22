@@ -3140,7 +3140,7 @@ export const kabupatenDummy: Kabupaten[] = [
   {
     id: 540,
     nama_kota_kabupaten: "Tana Tidung KU",
-    slug: "tana-tidung KU",
+    slug: "tana-tidung-ku",
     kota_id: 42,
     createdAt: "2024-08-10T10:37:25.000Z",
     updatedAt: "2024-08-10T10:37:25.000Z",

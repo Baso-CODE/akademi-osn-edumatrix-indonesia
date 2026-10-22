@@ -1,3 +1,5 @@
+import { isValidWilayah } from "@/app/lib/validateWilayah";
+import { notFound } from "next/navigation";
 import LocationLandingPage from "@/app/components/templates/LocationLandingPage";
 import { kotaDummy } from "@/app/lib/data/kotaDummy.data";
 import { generateLocationMetadata } from "@/app/lib/metadata-helper";
@@ -30,6 +32,8 @@ export default async function KotaPage({
   params: Promise<{ kotaSlug: string }>;
 }) {
   const { kotaSlug } = await params;
+
+  if (!isValidWilayah({ kotaSlug })) notFound();
 
   return (
     <LocationLandingPage slug={kotaSlug} type="kota" allSlugs={{ kotaSlug }} />
