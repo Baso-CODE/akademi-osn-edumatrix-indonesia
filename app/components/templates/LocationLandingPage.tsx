@@ -54,7 +54,7 @@ export default async function LocationLandingPage({
   const { kotaSlug, kabupatenSlug, kecamatanSlug, kelurahanSlug } = allSlugs;
 
   // 1. Bangun Base URL Path secara dinamis
-  let urlPath = `/bimbel-lesprivat-osn-imo-jismo-iso-ksn-di-kota/${kotaSlug}`;
+  let urlPath = `/persiapan-olimpiade/${kotaSlug}`;
   if (kabupatenSlug) urlPath += `/${kabupatenSlug}`;
   if (kecamatanSlug) urlPath += `/${kecamatanSlug}`;
   if (kelurahanSlug) urlPath += `/${kelurahanSlug}`;
@@ -78,92 +78,50 @@ export default async function LocationLandingPage({
   const imageUrl = kotaData?.foto_kota
     ? `https://akademiosn.com${kotaData.foto_kota}`
     : fallbackImage;
-  const basePath = `${baseUrl}/bimbel-lesprivat-osn-imo-jismo-iso-ksn-di-kota`;
+  const basePath = `${baseUrl}/persiapan-olimpiade`;
 
   type BreadcrumbItem = {
     "@type": "ListItem";
     position: number;
-    item: {
-      "@id": string;
-      name: string;
-    };
+    name: string;
+    item: string;
   };
 
   const breadcrumbItems: BreadcrumbItem[] = [
     {
       "@type": "ListItem",
       position: 1,
-      item: { "@id": baseUrl, name: "Home" },
-    },
-    {
-      "@type": "ListItem",
-      position: 2,
-      item: {
-        "@id": basePath,
-        name: "Bimbel & Les Privat Olimpiade",
-      },
+      name: "Beranda",
+      item: baseUrl,
     },
   ];
 
-  let position = 3;
+  const segments = [
+    { slug: kotaSlug, name: formatSlugToTitle(kotaSlug) },
+    ...(kabupatenSlug
+      ? [{ slug: kabupatenSlug, name: formatSlugToTitle(kabupatenSlug) }]
+      : []),
+    ...(kecamatanSlug
+      ? [{ slug: kecamatanSlug, name: formatSlugToTitle(kecamatanSlug) }]
+      : []),
+    ...(kelurahanSlug
+      ? [{ slug: kelurahanSlug, name: formatSlugToTitle(kelurahanSlug) }]
+      : []),
+  ];
 
-  // Kota
-  if (kotaSlug) {
+  let currentPath = "/persiapan-olimpiade";
+
+  for (const segment of segments) {
+    currentPath += `/${segment.slug}`;
+
     breadcrumbItems.push({
       "@type": "ListItem",
-      position: position++,
-      item: {
-        "@id": `${basePath}/${kotaSlug}`,
-        name: formatSlugToTitle(kotaSlug),
-      },
+      position: breadcrumbItems.length + 1,
+      name: segment.name,
+      item: `${baseUrl}${currentPath}`,
     });
   }
 
-  // Kabupaten
-  if (kabupatenSlug) {
-    breadcrumbItems.push({
-      "@type": "ListItem",
-      position: position++,
-      item: {
-        "@id": `${basePath}/${kotaSlug}/${kabupatenSlug}`,
-        name: formatSlugToTitle(kabupatenSlug),
-      },
-    });
-  }
-
-  // Kecamatan
-  if (kecamatanSlug) {
-    breadcrumbItems.push({
-      "@type": "ListItem",
-      position: position++,
-      item: {
-        "@id": `${basePath}/${kotaSlug}/${kabupatenSlug}/${kecamatanSlug}`,
-        name: formatSlugToTitle(kecamatanSlug),
-      },
-    });
-  }
-
-  // Kelurahan
-  if (kelurahanSlug) {
-    breadcrumbItems.push({
-      "@type": "ListItem",
-      position: position++,
-      item: {
-        "@id": `${basePath}/${kotaSlug}/${kabupatenSlug}/${kecamatanSlug}/${kelurahanSlug}`,
-        name: formatSlugToTitle(kelurahanSlug),
-      },
-    });
-  }
-
-  // Halaman aktif (terakhir)
-  breadcrumbItems.push({
-    "@type": "ListItem",
-    position: position,
-    item: {
-      "@id": canonicalUrl,
-      name: `Les Privat Olimpiade di ${formattedName}`,
-    },
-  });
   // 3. Structured Data (JSON-LD)
   const jsonLd = {
     "@context": "https://schema.org",

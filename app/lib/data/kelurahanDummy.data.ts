@@ -6732,7 +6732,7 @@ export const kelurahanDummy: Kelurahan[] = [
   {
     id: 2070,
     nama_kelurahan: "Sukapura",
-    slug: "sukapura-kiaracondongyang ",
+    slug: "sukapura-kiaracondongyang",
     kecamatan_id: 10126,
     createdAt: "2025-08-06T10:31:10.000Z",
     updatedAt: "2025-08-06T10:31:10.000Z",

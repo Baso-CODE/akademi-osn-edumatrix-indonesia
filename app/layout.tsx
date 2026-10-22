@@ -1,15 +1,7 @@
-import type { Metadata } from "next";
-import {
-  Geist,
-  Geist_Mono,
-  Honk,
-  Oswald,
-  Poppins,
-  Roboto,
-} from "next/font/google";
-import localFont from "next/font/local";
-
 import { GoogleAnalytics } from "@next/third-parties/google";
+import type { Metadata } from "next";
+import { Oswald, Poppins, Roboto } from "next/font/google";
+import localFont from "next/font/local";
 import FloatingCTA from "./components/floatingCTA";
 import FooterEduMatrix from "./components/footerEdumatrix";
 import BottomNavigationBarOSN from "./components/navbar/BottomNavigationBarOSN";
@@ -17,22 +9,15 @@ import { navLinks } from "./components/navbar/NavLink";
 import ResponsiveNav from "./components/navbar/ResponsiveNav";
 import "./globals.css";
 
-// Font Google
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+const SITE_URL = "https://akademiosn.com";
+const SITE_NAME = "Akademi OSN";
 
 const poppins = Poppins({
   variable: "--font-poppins",
   subsets: ["latin"],
   weight: ["400", "600", "700"],
   display: "swap",
+  preload: false,
 });
 
 const roboto = Roboto({
@@ -40,6 +25,7 @@ const roboto = Roboto({
   subsets: ["latin"],
   weight: ["400", "600", "700"],
   display: "swap",
+  preload: true,
 });
 
 const oswald = Oswald({
@@ -47,62 +33,50 @@ const oswald = Oswald({
   subsets: ["latin"],
   weight: ["400", "600", "700"],
   display: "swap",
+  preload: true,
 });
 
-const honk = Honk({
-  variable: "--font-honk",
-  subsets: ["latin"],
-  weight: ["400"],
-  display: "swap",
-});
-
-// Font lokal
 const superPencil = localFont({
   src: "./assets/font/Super-Pencil.ttf",
   variable: "--font-super-pencil",
   display: "swap",
+  preload: false,
 });
 
-export const dynamic = "force-dynamic";
-
 export const metadata: Metadata = {
-  title: "Les Privat Olimpiade • OSN IMO ISO Unggulan | Akademi OSN",
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: "Akademi OSN | Bimbel Olimpiade SD, SMP & SMA",
+    template: "%s | Akademi OSN",
+  },
   description:
-    "Les Privat Olimpiade OSN untuk SD–SMA. Dibimbing guru berpengalaman & peraih prestasi nasional. Belajar terarah, progres terpantau. Konsultasi gratis sekarang.",
+    "Program persiapan OSN dan bimbel olimpiade untuk siswa SD, SMP, dan SMA. Belajar Matematika, IPA, Fisika, Kimia, Biologi, dan Informatika bersama tutor berpengalaman.",
+  applicationName: SITE_NAME,
   verification: {
     google: "ncf5z6mALpNAHbm3jTHIruiz162Yq7rFS4DhNhuuo90",
   },
-
   openGraph: {
     type: "website",
     locale: "id_ID",
-    url: "https://akademiosn.com",
-    siteName: "Bimbel Alfa Privat",
-    title: "Les Privat Olimpiade • OSN IMO ISO Unggulan | Akademi OSN",
+    siteName: SITE_NAME,
+    title: "Akademi OSN | Bimbel Olimpiade SD, SMP & SMA",
     description:
-      "Les Privat Olimpiade OSN untuk SD–SMA. Dibimbing guru berpengalaman & peraih prestasi nasional. Belajar terarah, progres terpantau. Konsultasi gratis sekarang.",
+      "Persiapan Olimpiade Sains Nasional untuk siswa SD, SMP, dan SMA melalui pembelajaran terarah bersama Akademi OSN.",
     images: [
       {
-        url: "https://akademiosn.com/images/images-cta.webp",
+        url: `${SITE_URL}/images/images-cta.webp`,
         width: 1200,
         height: 630,
-        alt: "Les Privat Alfa Privat",
+        alt: "Bimbel Olimpiade dan Persiapan OSN Akademi OSN",
       },
     ],
   },
-
-  // TWITTER META
   twitter: {
     card: "summary_large_image",
-    site: "@alfaprivat",
-    title: "Les Privat Olimpiade • OSN IMO ISO Unggulan | Akademi OSN",
+    title: "Akademi OSN | Bimbel Olimpiade SD, SMP & SMA",
     description:
-      "Les Privat Olimpiade OSN untuk SD–SMA. Dibimbing guru berpengalaman & peraih prestasi nasional. Belajar terarah, progres terpantau. Konsultasi gratis sekarang.",
-    images: ["https://akademiosn.com/images/images-cta.webp"],
-  },
-
-  alternates: {
-    canonical: "https://akademiosn.com",
+      "Program persiapan OSN dan bimbel olimpiade untuk siswa SD, SMP, dan SMA.",
+    images: [`${SITE_URL}/images/images-cta.webp`],
   },
 };
 
@@ -114,14 +88,14 @@ export default function RootLayout({
   return (
     <html lang="id">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${poppins.variable} ${roboto.variable} ${oswald.variable} ${honk.variable} ${superPencil.variable} antialiased `}>
+        className={`${poppins.variable} ${roboto.variable} ${oswald.variable} ${superPencil.variable} antialiased`}>
         <ResponsiveNav />
         <main>{children}</main>
         <FloatingCTA />
         <BottomNavigationBarOSN navLinksData={navLinks} />
         <FooterEduMatrix />
+        <GoogleAnalytics gaId="G-826HX59SVQ" />
       </body>
-      <GoogleAnalytics gaId="G-826HX59SVQ" />
     </html>
   );
 }

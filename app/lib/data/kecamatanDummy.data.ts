@@ -8636,7 +8636,7 @@ export const kecamatanDummy: Kecamatan[] = [
   {
     id: 3075,
     nama_kecamatan: "Sumber Rembang",
-    slug: "sumber Rembang",
+    slug: "sumber-rembang",
     kota_kabupaten_id: 75,
     createdAt: "2024-09-06T16:31:55.000Z",
     updatedAt: "2024-09-06T16:31:55.000Z",
@@ -27124,7 +27124,7 @@ export const kecamatanDummy: Kecamatan[] = [
   {
     id: 7857,
     nama_kecamatan: "Pagar Dewa Tulang Bawang Barat",
-    slug: "pagar-dewa-tulang-bawang-barat ",
+    slug: "pagar-dewa-tulang-bawang-barat",
     kota_kabupaten_id: 278,
     createdAt: "2024-09-18T10:03:35.000Z",
     updatedAt: "2024-09-18T10:03:35.000Z",

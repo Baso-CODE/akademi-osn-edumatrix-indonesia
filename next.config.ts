@@ -14,8 +14,21 @@ const nextConfig: NextConfig = {
         pathname: "/**",
       },
     ],
-
     formats: ["image/avif", "image/webp"],
+  },
+  async redirects() {
+    return [
+      {
+        source: "/bimbel-lesprivat-osn-imo-jismo-iso-ksn-di-kota/:path*",
+        destination: "/persiapan-olimpiade/:path*",
+        permanent: true,
+      },
+      {
+        source: "/akademi-olimpiade/:path*",
+        destination: "/persiapan-olimpiade/:path*",
+        permanent: true,
+      },
+    ];
   },
 };
 

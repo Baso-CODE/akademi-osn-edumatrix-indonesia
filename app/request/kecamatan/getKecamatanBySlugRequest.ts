@@ -1,34 +1,79 @@
-import { KelurahanResponse } from "@/app/types/kota.types";
-import { baseUrlClient } from "../../utils/config";
 import { getKelurahanDummyByKecamatanSlug } from "@/app/lib/getDummyDataRequest/getKelurahanDummy.reques";
+import type { KelurahanResponse } from "@/app/types/kota.types";
+import { baseUrlWilayah } from "@/app/utils/config";
+
+function normalizeWilayahSlug(slug: string): string {
+  let normalized = slug.trim();
+
+  try {
+    normalized = decodeURIComponent(normalized);
+  } catch {
+    return normalized.toLowerCase();
+  }
+
+  return normalized.trim().toLowerCase();
+}
 
 export async function getKecamatanBySlug(
-  slug: string
+  slug: string,
 ): Promise<KelurahanResponse["data"]> {
+  if (!slug?.trim()) return { kelurahans: [] };
+
+  const normalizedSlug = normalizeWilayahSlug(slug);
+
+  const fallback = (): KelurahanResponse["data"] => ({
+    kelurahans: getKelurahanDummyByKecamatanSlug(normalizedSlug),
+  });
+
+  const url = `${baseUrlWilayah.replace(/\/+$/, "")}/kecamatans/slug/${encodeURIComponent(normalizedSlug)}`;
+
   try {
-    const response = await fetch(`${baseUrlClient}/kecamatans/slug/${slug}`, {
-      method: "GET",
-      cache: "force-cache",
+    const response = await fetch(url, {
+      headers: { Accept: "application/json" },
+      next: { revalidate: 300 },
+      signal: AbortSignal.timeout(10000),
     });
 
-    // Jika gagal → fallback ke dummy
+    if (response.status === 404) {
+      console.warn(
+        `[Wilayah API] Kecamatan tidak ditemukan: ${normalizedSlug}`,
+      );
+      return fallback();
+    }
+
     if (!response.ok) {
-      return {
-        kelurahans: getKelurahanDummyByKecamatanSlug(slug),
-      };
+      console.warn(
+        `[Wilayah API] Kecamatan ${normalizedSlug}: HTTP ${response.status}`,
+      );
+      return fallback();
+    }
+
+    const contentType = response.headers.get("content-type") ?? "";
+
+    if (!contentType.toLowerCase().includes("application/json")) {
+      console.warn(
+        `[Wilayah API] Respons kecamatan bukan JSON: ${normalizedSlug}`,
+      );
+      return fallback();
     }
 
     const result: KelurahanResponse = await response.json();
 
+    if (!Array.isArray(result.data?.kelurahans)) {
+      console.warn(
+        `[Wilayah API] Data kelurahan tidak valid: ${normalizedSlug}`,
+      );
+      return fallback();
+    }
+
     return {
-      kelurahans: result.data?.kelurahans ?? [],
+      kelurahans: result.data.kelurahans,
     };
   } catch (error) {
-    console.error("Error get kecamatans:", error);
-
-    // Jika network error → fallback dummy
-    return {
-      kelurahans: getKelurahanDummyByKecamatanSlug(slug),
-    };
+    console.warn(
+      `[Wilayah API] Gagal mengambil kecamatan ${normalizedSlug}:`,
+      error,
+    );
+    return fallback();
   }
 }
