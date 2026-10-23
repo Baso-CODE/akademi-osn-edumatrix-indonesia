@@ -118,7 +118,7 @@ export default function HeroKelurahan({
               transition={{ ...bounceTransition, delay: 0.4 }}>
               <Link
                 href={linkCta}
-                className="group relative inline-flex w-full md:w-[50%] lg:w-[40%] h-14 items-center justify-center rounded-full bg-[#F68507] py-1 pl-6 pr-14 font-medium text-neutral-50">
+                className="group relative inline-flex w-full md:w-[50%] lg:w-[40%] h-14 items-center justify-center rounded-full bg-[#F68507] py-1 pl-6 pr-14 font-medium text-[#172033]">
                 <span className="z-10 pr-2"> Daftar Sekarang</span>
                 <div className="absolute right-1 inline-flex h-12 w-12 items-center justify-end rounded-full bg-[#04397d] transition-[width] group-hover:w-[calc(100%-8px)]">
                   <div className="mr-3.5 flex items-center justify-center">

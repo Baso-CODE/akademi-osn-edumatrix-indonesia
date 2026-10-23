@@ -117,7 +117,7 @@ export default function HeroKota({
               transition={{ ...bounceTransition, delay: 0.4 }}
               className="group relative inline-flex w-full md:w-[50%] lg:w-[40%] 
                 h-14 items-center justify-center rounded-full bg-[#F68507] 
-                py-1 pl-6 pr-14 font-medium text-neutral-50">
+                py-1 pl-6 pr-14 font-medium text-[#172033]">
               <span className="z-10 pr-2">Daftar Sekarang</span>
               <div
                 className="absolute right-1 inline-flex h-12 w-12 items-center justify-end 
@@ -146,21 +146,19 @@ export default function HeroKota({
           </div>
 
           {/* ===== IMAGE ===== */}
-          <motion.div
-            className="lg:w-1/2 flex justify-center items-center"
-            initial={{ opacity: 0, x: 80, scale: 0.8 }}
-            whileInView={{ opacity: 1, x: 0, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ ...bounceTransition, delay: 0.3 }}>
+
+          <div className="lg:w-1/2 flex justify-center items-center">
             <Image
               src={fotoKota}
               alt={`Les privat OSN di ${kotaName}`}
               width={700}
               height={450}
+              priority
+              fetchPriority="high"
+              sizes="(max-width: 1024px) 100vw, 50vw"
               className="w-full h-auto rounded-md shadow-2xl"
-              loading="eager"
             />
-          </motion.div>
+          </div>
         </div>
       </div>
 

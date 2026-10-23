@@ -50,7 +50,7 @@ const Pilihan = () => {
                 Pilih Metode Belajarmu
               </h2>
               <div className="flex flex-col gap-2 sm:gap-2 lg:gap-4">
-                <div className="bg-[#09A76D] uppercase font-title font-bold text-sm sm:text-lg md:text-xl lg:text-[40px] xl:text-[48px] text-white py-2 px-4 sm:py-3 sm:px-6 rounded-xl lg:rounded-3xl w-30 sm:w-60 lg:w-90 lg:h-17.5 xl:w-105 xl:h-23 flex justify-center items-center">
+                <div className="bg-[#087A50] uppercase font-title font-bold text-sm sm:text-lg md:text-xl lg:text-[40px] xl:text-[48px] text-white py-2 px-4 sm:py-3 sm:px-6 rounded-xl lg:rounded-3xl w-30 sm:w-60 lg:w-90 lg:h-17.5 xl:w-105 xl:h-23 flex justify-center items-center">
                   Online
                 </div>
                 <div className="bg-[#C41926] uppercase font-title font-bold text-sm sm:text-lg md:text-xl lg:text-[40px] xl:text-[48px] text-white py-2 px-4 sm:py-3 sm:px-6 rounded-xl lg:rounded-3xl w-30 sm:w-60 lg:w-90 lg:h-17.5 xl:w-105 xl:h-23 flex justify-center items-center">

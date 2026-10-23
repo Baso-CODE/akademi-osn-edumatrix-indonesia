@@ -60,7 +60,7 @@ const PaketBelajarOSN = () => {
                 href={waLinkUltimateMastery}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-2 group relative inline-flex h-14 items-center justify-center rounded-full bg-[#faae17] py-1 pl-14 pr-6 font-medium text-neutral-50 transition-all duration-300 ">
+                className="mt-2 group relative inline-flex h-14 items-center justify-center rounded-full bg-[#faae17] py-1 pl-14 pr-6 font-medium text-[#172033] transition-all duration-300 ">
                 <div className="absolute right-1 inline-flex h-12 w-12 items-center justify-start rounded-full bg-[#04397d] transition-[width] group-hover:w-[calc(100%-8px)]">
                   <div className="ml-3.5 flex items-center justify-center rotate-180">
                     <svg
@@ -117,7 +117,7 @@ const PaketBelajarOSN = () => {
                 target="_blank"
                 aria-label="Tanya kelas melalui WhatsApp (membuka di tab baru)"
                 rel="noopener noreferrer"
-                className="mt-2 group relative inline-flex h-14 items-center justify-center rounded-full bg-[#faae17] py-1 pl-6 pr-14 font-medium text-neutral-50 transition-all duration-300">
+                className="mt-2 group relative inline-flex h-14 items-center justify-center rounded-full bg-[#faae17] py-1 pl-6 pr-14 font-medium text-[#172033] transition-all duration-300">
                 <span className="z-10 pr-2 font-bold uppercase">
                   <span className="mr-2">💬</span>Tanya Kelas
                 </span>

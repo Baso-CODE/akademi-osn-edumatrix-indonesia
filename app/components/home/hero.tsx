@@ -59,23 +59,23 @@ export default function Hero() {
     visible: { opacity: 1, y: 0, transition: bounceTransition },
   };
 
-  const fadeInLeft = {
-    hidden: { opacity: 0, x: -50 },
-    visible: {
-      opacity: 1,
-      x: 0,
-      transition: { ...bounceTransition, delay: 0.2 },
-    },
-  };
+  // const fadeInLeft = {
+  //   hidden: { opacity: 0, x: -50 },
+  //   visible: {
+  //     opacity: 1,
+  //     x: 0,
+  //     transition: { ...bounceTransition, delay: 0.2 },
+  //   },
+  // };
 
-  const popUp = {
-    hidden: { opacity: 0, scale: 0.5 },
-    visible: {
-      opacity: 1,
-      scale: 1,
-      transition: { ...bounceTransition, delay: 0.3 },
-    },
-  };
+  // const popUp = {
+  //   hidden: { opacity: 0, scale: 0.5 },
+  //   visible: {
+  //     opacity: 1,
+  //     scale: 1,
+  //     transition: { ...bounceTransition, delay: 0.3 },
+  //   },
+  // };
 
   return (
     <section className="relative bg-[#04397D] flex items-center justify-center overflow-hidden">
@@ -127,12 +127,7 @@ export default function Hero() {
               )}
             </motion.div>
 
-            <motion.p
-              className="mb-8 font-desc text-[14px] md:text-[16px] leading-4.75 font-bold"
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={fadeInLeft}>
+            <p className="mb-8 font-desc text-[14px] md:text-[16px] leading-normal font-bold">
               Akademi OSN bangga mendukung generasi muda Indonesia dalam meraih
               prestasi di Olimpiade Sains Nasional. Program kami dirancang untuk
               mempersiapkan siswa dengan pengetahuan mendalam dan keterampilan
@@ -144,7 +139,7 @@ export default function Hero() {
               prestasi gemilang, dan membawa nama harum bagi sekolah dan bangsa.
               Bersama Akademi OSN, jadilah bagian dari perjalanan menuju puncak
               prestasi di OSN!
-            </motion.p>
+            </p>
 
             <motion.div
               initial={{ opacity: 0, y: 50, scale: 0.8 }}
@@ -155,7 +150,7 @@ export default function Hero() {
                 href={link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group relative inline-flex w-full md:w-[50%] lg:w-[40%] h-14 items-center justify-center rounded-full bg-[#F68507] py-1 pl-6 pr-14 font-medium text-neutral-50 shadow-lg hover:scale-105 transition-transform duration-300">
+                className="group relative inline-flex w-full md:w-[50%] lg:w-[40%] h-14 items-center justify-center rounded-full bg-[#F68507] py-1 pl-6 pr-14 font-medium text-[#172033] shadow-lg hover:scale-105 transition-transform duration-300">
                 <span className="z-10 pr-2 font-bold font-title leading-relaxed">
                   Daftar Sekarang
                 </span>
@@ -182,31 +177,18 @@ export default function Hero() {
           </div>
 
           <div className="lg:w-1/2 flex justify-center items-center">
-            <motion.div
-              variants={popUp}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              className="w-full h-full">
-              <motion.div
-                animate={{ y: [0, -15, 0] }}
-                transition={{
-                  duration: 4,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}>
-                <Image
-                  loading="eager"
-                  priority
-                  fetchPriority="high"
-                  src="/images/image-preview-landing-page.webp"
-                  alt="Bimbingan belajar les privat untuk persiapan OSN dan peningkatan prestasi akademik siswa SD SMP SMA"
-                  width={1200}
-                  height={1200}
-                  className="w-full h-full object-contain drop-shadow-2xl"
-                />
-              </motion.div>
-            </motion.div>
+            <div className="w-full h-full">
+              <Image
+                src="/images/image-preview-landing-page.webp"
+                alt="Bimbingan belajar les privat untuk persiapan OSN dan peningkatan prestasi akademik siswa SD SMP SMA"
+                width={1200}
+                height={1200}
+                priority
+                fetchPriority="high"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="w-full h-full object-contain drop-shadow-2xl"
+              />
+            </div>
           </div>
         </div>
       </div>

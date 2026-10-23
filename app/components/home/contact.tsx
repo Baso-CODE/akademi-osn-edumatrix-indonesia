@@ -62,7 +62,7 @@ export default function Contact() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block">
-                <div className="bg-[#F68507] text-white py-3 font-desc font-bold md:text-[32px] text-[20px] px-2 rounded-md text-center hover:bg-orange-600 transition-colors duration-200">
+                <div className="bg-[#F68507] text-[#172033] py-3 font-desc font-bold md:text-[32px] text-[20px] px-2 rounded-md text-center hover:bg-orange-600 transition-colors duration-200">
                   {contact.nomor_hp} ({contact.nama_cs})
                 </div>
               </Link>
